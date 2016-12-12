@@ -1,0 +1,559 @@
+(lp0
+(dp1
+S'Core'
+p2
+S'ARM9'
+p3
+sS'Errata ID'
+p4
+S'ENGR116904'
+p5
+sS'Criticality'
+p6
+S' '
+p7
+sS'Workaround'
+p8
+S'Always write the HW_PXP_CSCCOEFF2_C3 register with the expected value before using it. The\r\nPXP_CSCCOEFF2 register address is 0x8002A0F0.'
+p9
+sS'Chip'
+p10
+S'IMX28'
+p11
+sS'Fix Status'
+p12
+S'No fix scheduled'
+p13
+sS'Revisions Impacted'
+p14
+g7
+sS'Module'
+p15
+S'PXP'
+p16
+sS'Masks Affected'
+p17
+g7
+sS'Failure'
+p18
+S'PXP: The HW_PXP_CSCCOEFF2_C3 register can not be reset\r\ncorrectly under some PVT corner'
+p19
+sS'Details'
+p20
+S'The HW_PXP_CSCCOEFF2_C3 register does not receive the correct reset value after using the\r\nPXP software reset function or after power up.The PXP operates incorrectly with wrong coefficient setting.'
+p21
+sS'Manufacturer'
+p22
+S'NXP'
+p23
+sa(dp24
+g2
+S'ARM9'
+p25
+sg4
+S'ENGR119650'
+p26
+sg6
+g7
+sg8
+S'Set SBUSCFG.AHBBRST of the USB register to a modes other than 0b010 or 0b011.'
+p27
+sg10
+S'IMX28'
+p28
+sg12
+S'No fix scheduled'
+p29
+sg14
+g7
+sg15
+S'USB'
+p30
+sg17
+g7
+sg18
+S' USB: USB core INCR8 and INCR16 modes are inoperable'
+p31
+sg20
+S'The USB controller may not operate properly when receiving a packet in INCR8 and INCR16\r\nmodes. The packet is completed correctly (ACK is sent) on the USB bus, but cannot be seen by\r\nsoftware.\r\nThis issue exists when all of following conditions are met:\r\n1. Controller is receiving data (Host Bulk IN or Device Bulk OUT)\r\n2. Primary INCR8/INCR16 mode is selected (SBUSCFG. AHBBRST of the USB register is set\r\nto 0b010 or 0b011)\r\n3. Length of data received is less than the total_byte field in TD\r\n4. Data length is not a multiple of the burst size and the remainder is a sub-burst. For example, if\r\nthe data length is 32n + 16 bytes in INCR8 mode, or 64n + 16/32/48 in INCR16 mode, this\r\nerrata is triggered.\r\nProjected Impact:\r\nThis is a low severity bug because INCR8 and INCR16 are not mandatory modes. Other modes\r\nshould be used.'
+p32
+sg22
+S'NXP'
+p33
+sa(dp34
+g2
+S'ARM9'
+p35
+sg4
+S'ENGR119653'
+p36
+sg6
+g7
+sg8
+S'All USB register write operations must use the ARM SWP instruction.'
+p37
+sg10
+S'IMX28'
+p38
+sg12
+S'No fix scheduled'
+p39
+sg14
+g7
+sg15
+S'USB'
+p40
+sg17
+g7
+sg18
+S'USB: ARM to USB register error issue'
+p41
+sg20
+S'The ARM writes a data error to the USB core register unless SRM SWP instruction is used.\r\nThe issue occurs when all of the following conditions are met:\r\n1. Last AHB access is to the non-USB AHB slave\r\n2. Current AHB access is to the USB\r\n3. These two accesses are back-to-back\r\n4. The last data phase of the last AHB access has a wait state\r\n5. Only happens when D-cache is enabled Projected Impact:\r\nThe USB register does not get correct data when writing to the USB slave through the AHB bus\r\nwhen D-cache is enabled'
+p42
+sg22
+S'NXP'
+p43
+sa(dp44
+g2
+S'ARM9'
+p45
+sg4
+S'ENGR119657'
+p46
+sg6
+g7
+sg8
+S'If the HSADC input clock is lower than the 24 MHz APBX bus clock the APBX bus clock should\r\nbe set to a lower frequency before every write to the PWM register. When the write access finishes,\r\nthe APBX clock can be set back to normal.'
+p47
+sg10
+S'IMX28'
+p48
+sg12
+S'No fix scheduled.'
+p49
+sg14
+g7
+sg15
+S'PWM'
+p50
+sg17
+g7
+sg18
+S'PWM: Register write sync issue when HSADC clock frequency is\r\nlower than APBX clock frequency'
+p51
+sg20
+S'The PWM channel might not generate the required output signal when in HSADC driving mode.\r\nWhen in HSADC mode, if the HSADC input clock is much lower than the APBX bus clock (for\r\nexample APBX Bus clock is 24 MHz and HSADC input clock is 4 MHz) the write signal to the\r\nPWM registers is missed. Write access to the following registers has no effect after HSADC mode\r\nis enabled:\r\n\xe2\x80\xa2 PWM Control and Status Register\r\n\xe2\x80\xa2 PWM Channel Active Register\r\n\xe2\x80\xa2 PWM Channel Period Register\r\nAs a result, dedicated PWM channel is not triggered.\r\nProjected Impact:\r\nHSADC or off chip linear sensor does not receive the required control signals.'
+p52
+sg22
+S'NXP'
+p53
+sa(dp54
+g2
+S'ARM9'
+p55
+sg4
+S'ENGR121613'
+p56
+sg6
+g7
+sg8
+S'When communicating with the Ethernet controller, an additional byte-swap routine has to be called\r\nby the ARM core.'
+p57
+sg10
+S'IMX28'
+p58
+sg12
+S'No fix scheduled.'
+p59
+sg14
+g7
+sg15
+S'ENET'
+p60
+sg17
+g7
+sg18
+S'ENET: ENET big endian mode not compatible with ARM little endian'
+p61
+sg20
+S'The endian mode of the Ethernet controller is designed to be big-endian mode which is not\r\ncompatible with the ARM core and reset sections of the device.\r\nProjected Impact:\r\nThe ARM core cannot establish data communication correctly to/from the Ethernet controller\r\nwithout software endian conversion.'
+p62
+sg22
+S'NXP'
+p63
+sa(dp64
+g2
+S'ARM9'
+p65
+sg4
+S'ENGR121616'
+p66
+sg6
+g7
+sg8
+S'Do not use DMA PIO operation to configure the associated peripheral when using channel freeze\r\nfunction. Use ARM PIO operation instead.'
+p67
+sg10
+S'IMX28'
+p68
+sg12
+S'No fix scheduled'
+p69
+sg14
+g7
+sg15
+S'DMA'
+p70
+sg17
+g7
+sg18
+S'DMA: APBH/APBX DMA channel can stall while waiting to access a\r\nAPBH/APBX bus peripheral when the channel freeze bit is set'
+p71
+sg20
+S'When the channel freeze bit is set, the APBH/APBX DMA channel can stall while waiting to\r\naccess a peripheral on the APBH/APBX bus. This occurs if the channel freeze bit is set exactly at\r\nthe same time as when the channel internal state machine changes from the PIO_REQ state to the\r\nREQ_WAIT state.\r\nProjected Impact:\r\nThe data communication with the APBH/APBX DMA channel associated peripheral is stalled.'
+p72
+sg22
+S'NXP'
+p73
+sa(dp74
+g2
+S'ARM9'
+p75
+sg4
+S'ERR002656'
+p76
+sg6
+g7
+sg8
+S'Instead of aborting the transmission, use deactivation instead.\r\nNote that there is a chance the deactivated TxMB can be transmitted without setting IFLAG\r\nand updating the CODE field if it is deactivated.'
+p77
+sg10
+S'IMX28'
+p78
+sg12
+S'No fix scheduled'
+p79
+sg14
+g7
+sg15
+S'FlexCAN'
+p80
+sg17
+g7
+sg18
+S'FlexCAN: Abort request blocks the CODE field'
+p81
+sg20
+S'An Abort request to a transmit message buffer (TxMB) can block any write operation into its\r\nCODE field. Therefore, the TxMB cannot be aborted or deactivated until it completes a valid\r\ntransmission (by winning the CAN bus arbitration and transmitting the contents of the TxMB).\r\nProjected Impact:\r\nThe TxMB cannot be aborted or deactivated until it completes a valid transmission.'
+p82
+sg22
+S'NXP'
+p83
+sa(dp84
+g2
+S'ARM9'
+p85
+sg4
+S'ERR002360'
+p86
+sg6
+g7
+sg8
+S'It is recommended that one of the following actions be taken to avoid problems:\r\n\xe2\x80\xa2 Do not enable the RxFIFO. If CANx_MCR[FEN]=0 then the Rx FIFO is disabled and thus the\r\nmasks RXGMASK, RX14MASK and RX15MASK do not affect it.\r\n\xe2\x80\xa2 Enable Rx Individual Mask Registers. If the Backwards Compatibility Configuration bit in the\r\nFlexCAN Module Configuration Register (CANx_MCR[BCC], bit 16) is set then the Rx\r\nIndividual Mask Registers (RXIMR0-63) are enabled and thus the masks RXGMASK,\r\nRX14MASK and RX15MASK are not used.\r\n\xe2\x80\xa2 Do not use the masks RXGMASK, RX14MASK and RX15MASK (leave them in reset value\r\nwhich is 0xffff_ffff) when CANx_MCR[FEN]=1 and CANx_MCR[BCC]=0. In this case,\r\nfiltering processes for both RxMBs and Rx FIFO are not affected by those masks.\r\n\xe2\x80\xa2 Do not configure any MB as Rx (leave all MBs as either Tx or inactive) when\r\nCANx_MCR[FEN]=1 and CANx_MCR[BCC]=0. In this case, the masks RXGMASK,\r\nRX14MASK and RX15MASK can be used to affect ID tables without affecting filtering process\r\nfor RxMBs.'
+p87
+sg10
+S'IMX28'
+p88
+sg12
+S'No fix scheduled'
+p89
+sg14
+g7
+sg15
+S'FlexCAN'
+p90
+sg17
+g7
+sg18
+S'FlexCAN: Global Masks misalignment'
+p91
+sg20
+S'During CAN message reception by FlexCAN, the RXGMASK (Rx Global Mask) is used as an\r\nacceptance mask for most of the Rx message buffers (MB). When the FIFO Enable bit in the\r\nFlexCAN Module Configuration Register (CANx_MCR[FEN], bit 29) is set, the RXGMASK also\r\napplies to most of the elements of the ID filter table. However, there is a misalignment between the\r\nposition of the ID field in the RxMB and that in the RXIDA, RXIDB and RXIDC fields of the ID\r\ntables. In fact, the RXIDA filter in the ID tables is shifted one bit to the left from the RxMBs ID\r\nposition, as shown below:\r\nRxMB ID = bits 28-0 of ID word corresponding to message ID bits 28-0\r\nRXIDA = bits 29-1 of ID Table corresponding to message ID bits 28-0\r\nNote that the mask bits align to the ID filter bits, not to the incoming ID bits. For example, the bit\r\n4 in RXGMASK masks bit 4 in RxMB ID, but it does not mask bit 4 in incoming message ID. This\r\nmisalignment leads the RXGMASK to affect RxMB and Rx FIFO filtering in different ways.\r\nFor example, if the user intends to mask out bit 4 of the ID filter of message buffer then the\r\nRXGMASK will be configured as 0xffff_ffef. As a result, bit 4 of the ID field of the incoming\r\nmessage is ignored during the filtering process for message buffers. This very same configuration\r\nof RXGMASK, which would lead bit 4 of RXIDA to be \xe2\x80\x9cdo not care\xe2\x80\x9d and thus bit 3 of the ID field\r\nof the incoming message would be ignored during the filtering process for the Rx FIFO.\r\nSimilarly, both RXIDB and RXIDC filters have multiple misalignments with regards to position of\r\nthe ID field in the RxMBs, which can lead to erroneous masking during the filtering process for\r\neither Rx FIFO or MBs.\r\nRX14MASK (Rx 14 Mask) and RX15MASK (Rx 15 Mask) have the same structure as the\r\nRXGMASK. This includes the misalignment problem between the position of the ID field in the\r\nRxMBs and in the RXIDA, RXIDB and RXIDC fields of the ID Tables. Leading to mask misalignment between RxMB and Rx FIFO filtering.'
+p92
+sg22
+S'NXP'
+p93
+sa(dp94
+g2
+S'ARM9'
+p95
+sg4
+S'2765'
+p96
+sg6
+g7
+sg8
+S'If cpu_ref is inactive, then activate the cpu_ref before attempting to switch to synchronous mode.'
+p97
+sg10
+S'IMX28'
+p98
+sg12
+S'No fix scheduled'
+p99
+sg14
+g7
+sg15
+S'EMI Clock'
+p100
+sg17
+g7
+sg18
+S'EMI Clock: Switching to synchronous mode error'
+p101
+sg20
+S'In order to switch the EMI clock from asynchronous to synchronous mode, both the xtal_ref and\r\nthe cpu_ref must be active, even if both BYPASS_CPU and BYPASS_EMI are set in the\r\nHW_CLKCTRL_CLKSEQ register.\r\nProjected Impact:\r\nThe i.MX28 locks up.'
+p102
+sg22
+S'NXP'
+p103
+sa(dp104
+g2
+S'ARM9'
+p105
+sg4
+S'2858'
+p106
+sg6
+g7
+sg8
+S'Postpone freeing the current dTD; free it when its next dTD can be freed, so the last completed dTD\r\n(followed by an ACTIVE dTD) is always freed when the next IOC irq comes.'
+p107
+sg10
+S'IMX28'
+p108
+sg12
+S'No fix scheduled'
+p109
+sg14
+g7
+sg15
+S'USB'
+p110
+sg17
+g7
+sg18
+S'USB controller may access a wrong address for the dTD (endpoint\r\ntransfer descriptor) and then hangs'
+p111
+sg20
+S'Currently, software checks the active bit in dTD to see whether it is finished. If the Active bit is 0,\r\nthen software frees the allocated memory for the dTD.\r\nThe hardware sequence after all data of a dTD is transferred is as follows:\r\n1. Update the dTD. This includes an AHB write access of three DWords. The active bit is cleared\r\nin the first DW write.\r\n2. Update the qHead (this includes an AHB write access of three DWords).\r\n3. Read the dTD again to check if software added a new dTD (this is a SINGLE AHB read). At\r\nthe same time, send out an interrupt if needed.\r\nAfter step 1, if software finds the Active bit is cleared, then the dTD memory space is freed and\r\nmay be allocated for another thread\xe2\x80\x99s use. In step 3, hardware may get a wrong dTD.\r\nThis issue does not occur if some delay is added before freeing the dTD memory space.\r\nThis issue only occurs in USB INCR8 mode, because steps 1 and 2 have 6 SINGLE AHB transfers\r\nin INC8 mode, but only two burst AHB transfers in INCR mode.\r\nThis issue only occurs when the dTD list is used; because if only one dTD is used, the software\r\nonly checks the Active bit after an interrupt is received (step 3). However, when the dTD list is\r\nused, the software may check the entire list after the interrupt for the first dTD is received, when\r\nthe hardware has just finished the transfer of the second dTD.\r\nProjected Impact:\r\nUSB Controller may hang if dTD is freed too quickly.'
+p112
+sg22
+S'NXP'
+p113
+sa(dp114
+g2
+S'ARM9'
+p115
+sg4
+S'2814'
+p116
+sg6
+g7
+sg8
+S'In order to power down the system properly when 5 V is removed, set PWDN_5VBRNOUT bit in\r\nRegister HW_POWER_5VCTRL.'
+p117
+sg10
+S'IMX28'
+p118
+sg12
+S'No fix scheduled'
+p119
+sg14
+g7
+sg15
+S'DCDC'
+p120
+sg17
+g7
+sg18
+S'The DCDC converters unexpectedly turn on when 5 V is removed\r\nwhile the DCDC_XFER bit is clear'
+p121
+sg20
+S'If the DCDC_XFER bit is clear, the DCDC converter should not automatically turn on when 5 V\r\nis removed. Instead, a power-down should occur if 5 V is removed, when DCDC_XFER and\r\nENABLE_DCDC are zero.\r\nProjected Impact:\r\nDCDC converter input source may switch to DCDC_BATT pin but no power source is present\r\nthere. This may latch-up the DCDC converter circuit.'
+p122
+sg22
+S'NXP'
+p123
+sa(dp124
+g2
+S'ARM9'
+p125
+sg4
+S'2811'
+p126
+sg6
+g7
+sg8
+S'Use the VBUSVALID comparator for 5V plug/unplug detection. Actually, the VBUSVALID\r\ncomparator is recommended in the reference manual, not VDD5V_GT_VDDIO.\r\nThe VBUSVALID_5VDETECT bit in HW_POWER_5VCTRL should be set to \xe2\x80\x9c1\xe2\x80\x9d (it\xe2\x80\x99s default\r\nvalue) and never cleared. The detection threshold can be changed in the VBUSVALID_TRSH bit\r\nfield in HW_POWER_5VCTRL.'
+p127
+sg10
+S'IMX28'
+p128
+sg12
+S'No silicon fix scheduled.'
+p129
+sg14
+g7
+sg15
+S'VDD5V_GT_VDDIO'
+p130
+sg17
+g7
+sg18
+S'Unreliability of VDD5V_GT_VDDIO functionality'
+p131
+sg20
+S'Due to unreliability of the VDD5V_GT_VDDIO functionality, the power supply should never be\r\nconfigured to be used as the 5-V plug/unplug detection method.\r\nProjected Impact:\r\nVDD5V_GT_VDDIO output may not change to \xe2\x80\x9c0\xe2\x80\x9d (and VDD5V_GT_VDDIO_IRQ may not be\r\ntriggered) when 5 V is unplugged.'
+p132
+sg22
+S'NXP'
+p133
+sa(dp134
+g2
+S'ARM9'
+p135
+sg4
+S'TKT131240'
+p136
+sg6
+g7
+sg8
+S'If tISU at SD/MMC/eMMC input is violated and write command error occurs during boot from\r\nSD/MMC/eMMC, a ROM patch of 1kByte size loaded from the EEPROM is required to fix this\r\nissue. Boot mode should be set to [0001] for the EEPROM on I2C0 or [1000] for the EEPROM on\r\nSPI3. The patch executes from the EEPROM, patches the ROM SSP driver code, and switches boot\r\nto either SSP0 or SSP1. There are separate patch binaries to boot from SSP0 and SSP1.'
+p137
+sg10
+S'IMX28'
+p138
+sg12
+S'No silicon fix scheduled.'
+p139
+sg14
+g7
+sg15
+S'SSP0/1-SD/MMC/eMMC Boot'
+p140
+sg17
+g7
+sg18
+S'SSP0/1-SD/MMC/eMMC Boot: SSP_SCK polarity setup issue in ROM'
+p141
+sg20
+S'When boot mode is set as boot from SD/MMC/eMMC on SSP0/1, the SSP_SCK polarity is not\r\ncorrectly set up in ROM. The POLARITY bit in HW_SSP_CTRL1 register should be set to \xe2\x80\x9c1\xe2\x80\x9d\r\n(command and data output on falling edge of clock) according to SD/MMC/eMMC specification.\r\nHowever, the POLARITY bit is set to \xe2\x80\x9c0\xe2\x80\x9d in ROM in the existing silicon (TO1.2). As a result, input\r\nsetup time (tISU) at SD/MMC/eMMC input may not be met.\r\nProjected Impact:\r\nWrite command error may occur when booting from the SD/MMC/eMMC on SSP0/1 and result\r\nin boot failure.'
+p142
+sg22
+S'NXP'
+p143
+sa(dp144
+g2
+S'ARM9'
+p145
+sg4
+S'5837'
+p146
+sg6
+g7
+sg8
+S'The sequence below is needed to work around this issue prior to setting the ENABLE_DCDC bit\r\nin HW_POWER_DCDC4P2:\r\n1. Disable the power rail brownout interrupts (clear HW_POWER_CTRL VDDA, VDDD,\r\nVDDIO ENIRQ bits).\r\n2. Set the HW_POWER_5VCTRL PWRUP_VBUS_CMPS bit.\r\n3. Set the HW_POWER_5VCTRL VBUSVALID_TRSH to 0x0 (2.9 V).\r\n4. Set the HW_POWER_5VCTRL VBUSVALID_5VDETECT bit to 1.\r\n5. Disable VBUSDROOP status and interrupts (clear VDD5V_DROOP_IRQ).\r\n6. Set the ENABLE_DCDC bit in HW_POWER_DCDC4P2.\r\n7. Wait 100 \xc2\xb5s\r\n8. Check VBUSVALID_IRQ bit. If it is set, then set and clear the PWD_CHARGE_4P2 bit to\r\nrepower on the 4P2 regulator because it is automatically shut off on a VBUSVALID false\r\ncondition. It may be helpful to ramp up the CHARGE_4P2_ILIMIT value at this point to\r\ngradually draw power from 5 V rail. If HW_POWER_5VCTRL ENABLE_DCDC is already\r\nset, the DCDC will draw current from VDD4P2 as soon as PWD_CHARGE_4P2 is cleared.\r\n9. Clear VBUSDROOP, VBUSVALID, and the output rails IRQ bits as needed.\r\n10. Restore the output rail ENIRQ bits, the VBUSVALID_TRSH level,\r\nVBUSVALID_5VDETECT value, ENIRQ_VBUS_VALID, and ENIRQ_VDD5V_DROOP to\r\ntheir original values.\r\nThe sequence below is needed to work-around this issue prior to setting the ENABLE_DCDC bit in\r\nHW_POWER_5VCTRL and HW_POWER_DCDC4P2. Note that the below workaround assumes the\r\nusual requirements for setting the HW_POWER_5VCTRL ENABLE_DCDC bit are met (that is, the\r\nhardware and/or software battery brownout protection mechanism is enabled to properly protect the\r\nsystem against the DCDC sourcing from the battery if the battery voltage is too low).\r\n1. Disable the power rail brownout interrupts (clear HW_POWER_CTRL VDDA, VDDD,\r\nVDDIO ENIRQ bits).\r\n2. Set the HW_POWER_5VCTRL PWRUP_VBUS_CMPS bit.\r\n3. Set the HW_POWER_5VCTRL VBUSVALID_TRSH to 0x0 (2.9 V).\r\n4. Set the HW_POWER_5VCTRL VBUSVALID_5VDETECT bit to 1.\r\n5. Disable VBUSDROOP status and interrupts (clear VDD5V_DROOP_IRQ).\r\n6. Set the ENABLE_DCDC bit in HW_POWER_5VCTRL.\r\n7. Wait 100 \xc2\xb5s.\r\n8. Check VBUSVALID_IRQ bit. If it is set, and 5 V is present and the VDD4P2 rail was enabled,\r\nthen repeat the sequence for enabling the 4P2 regulator and DCDC from VDD4P2. This bit\r\nindicates that the DCDC has tried to source from the battery, even if 4P2 sourcing is enabled.\r\nThis is because a VBUSVALID false condition automatically disables the 4P2 regulator, so the\r\nDCDC then falls back to battery sourcing.\r\n9. Clear VBUSDROOP, VBUSVALID, and the output rails IRQ bits as needed.\r\n10. Restore the output rail ENIRQ bits, the VBUSVALID_TRSH level,\r\nVBUSVALID_5VDETECT value, ENIRQ_VBUS_VALID, and ENIRQ_VDD5V_DROOP to\r\ntheir original values.'
+p147
+sg10
+S'IMX28'
+p148
+sg12
+S'No silicon fix scheduled'
+p149
+sg14
+g7
+sg15
+S'ENABLE_DCDC'
+p150
+sg17
+g7
+sg18
+S'Setting the ENABLE_DCDC bit in the HW_POWER_DCDC4P2 or HW_POWER_5VCTRL registers can result in false brownout Detection'
+p151
+sg20
+S'When the ENABLE_DCDC bit in HW_POWER_DCDC4P2 or HW_POWER_5V_CTRL is set, a\r\nglitch is propagated through the brownout comparators. If the glitch is sufficiently large, it can\r\ncause a false brownout detection. The VDDD, VDDA, VDDIO, and VBUSVALID comparators are\r\nall susceptible to the glitch.\r\nProjected Impact:\r\nCan result in a false brownout detection.'
+p152
+sg22
+S'NXP'
+p153
+sa(dp154
+g2
+S'ARM9'
+p155
+sg4
+S'TKT140334'
+p156
+sg6
+g7
+sg8
+S'Contact ONFI NAND vendor to supply NAND device with the \xe2\x80\x9csupports extended parameter\r\npage\xe2\x80\x9d bit set to \xe2\x80\x9c0\xe2\x80\x9d, so that the i.MX28 boot ROM will not treat it as BA-NAND.'
+p157
+sg10
+S'IMX28'
+p158
+sg12
+S'No silicon fix scheduled.'
+p159
+sg14
+g7
+sg15
+S'ONFI'
+p160
+sg17
+g7
+sg18
+S'ONFI 3.0 NAND boot-up issue'
+p161
+sg20
+S'ROM in existing silicon (TO1.2) supports ONFI BA-NAND boot-up. During boot-up it reads Bit\r\n7 of Byte 6-7 (1=supports Block Abstracted access mode) in ONFI NAND device\xe2\x80\x99s parameter page\r\nto determine if the NAND device is ONFI BA-NAND. BA-NAND memory devices are no longer\r\npart of the ONFI spec and memory vendors do not support these devices anymore. However in\r\nONFI 3.0 Spec, that bit has been re-used to specify whether the NAND device supports extended\r\nparameter page.\r\nWhen a system is mounted with ONFI 3.0 NAND device with \xe2\x80\x9csupports extended parameter page\xe2\x80\x9d\r\nbit set to \xe2\x80\x9c1\xe2\x80\x9d, the i.MX28 boot ROM will see it as BA-NAND and will use BA-NAND commands\r\nto access the NAND device. As a result, the system will fail to boot-up.\r\nProjected Impact:\r\nSystem mounted with ONFI 3.0 NAND device will fail to boot-up.'
+p162
+sg22
+S'NXP'
+p163
+sa(dp164
+g2
+S'ARM9'
+p165
+sg4
+S'ENGR119956'
+p166
+sg6
+g7
+sg8
+S'The Ethernet 1588 clock can be gated off by clearing the HW_CLKCTRL_ENET_DIV_TIME\r\nregister. The HW_CLKCTRL_ENET_DIV_TIME register address is 0x80040140.'
+p167
+sg10
+S'IMX28'
+p168
+sg12
+S'No fix scheduled'
+p169
+sg14
+g7
+sg15
+S'CLKCTRL'
+p170
+sg17
+g7
+sg18
+S'CLKCTRL: ENET 1588 clock (CLK_ENET_TIME) is not under control\r\nof ENET disable control bit'
+p171
+sg20
+S'The Ethernet 1588 clock (CLK_ENET_TIME) continues to toggle when the Ethernet module is disabled by setting ENET disable control bit in the HW_CLKCTRL_ENET register. The ethernet controller consumes 30 ?A on the 4.2 V power supply. Projected Impact: The Ethernet 1588 clock consumes 30 ?A on the 4.2 V power supply when the Ethernet module is disabled.'
+p172
+sg22
+S'NXP'
+p173
+sa.

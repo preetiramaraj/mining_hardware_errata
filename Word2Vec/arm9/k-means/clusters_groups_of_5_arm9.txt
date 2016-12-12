@@ -1,0 +1,1263 @@
+Time elapsed is 58.9404540062 seconds.
+2104
+
+Cluster  0
+['driving', 'externally', 'operational']
+
+Cluster  1
+['would', 'features', 'initial', 'emif', 'endpoint', 'since', 'option', 'sel', 'b.', 'pulses', 'normally']
+
+Cluster  2
+['chipsig', 'skipping', 'leads', 'not.', 'enabled.', 'drdy']
+
+Cluster  3
+['timeout', 'optimized', 'correctly.', 'txfifo', 'electrostatic', 'irq', 'manual', 'eim', 'underrun', 'shift', 'designed', 'ausx', 'included', 'consider', 'misses', 'boundary', 'csd', 'iso', 'transferring', 'stack', 'async', 'unintentional', 'cellular', 'waking', 'motor', 'sdio', 'vbusvalid', 'sram.', 'words', 'stuffing', 'position']
+
+Cluster  4
+['omap', 'dsp', 'revised', 'august', 'october', 'sprz', 'march', 'semaphore']
+
+Cluster  5
+['protection', 'ethernet', 'effect.', 'sync', 'emi', 'protect', 'mcr', 'hang', 'old', 'flexcan', 'clearing', 'por', 'model', 'seconds', 'prior', 'descriptors', 'vbus', 'serviced', 'clkctrl', 'vdetect', 'circuit.', 'enet', 'mechanism', 'module', 'freeze', 'made', 'again.']
+
+Cluster  6
+['available']
+
+Cluster  7
+['direction', 'ignored.', 'rhr', 'last', 'loading']
+
+Cluster  8
+['pulse', 'additional']
+
+Cluster  9
+['disr', 'series', 'rm', 'atq', 'previous', 'atmei', 'atmel', 'mar', 'el', 'sam', 'many', 'none', 'datasheet', 'almel', 'preliminary', 'samqzso']
+
+Cluster  10
+['signal', 'level', 'usart', 'low', 'modem', 'level.', 'high', 'dcd']
+
+Cluster  11
+['stalls']
+
+Cluster  12
+['event.', 'might', 'cleared.', 'loss', 'lead']
+
+Cluster  13
+['every', 'modes.', 'contents', 'attempts', 'emb', 'required.', 'specific', 'ns', 'pages', 'around', 'allows', 'miss', 'see', 'ldm', 'finishes', 'greater', 'details']
+
+Cluster  14
+['mck', 'switching', 'pll', 'divider', 'switch', 'main', 'i.e']
+
+Cluster  15
+['iap', 'users', 'cacheable']
+
+Cluster  16
+['simultaneously', 'fields', 'fuf']
+
+Cluster  17
+['dummy', 'descriptor', 'counting', 'specify', 'initiated', 'methods', 'resets', 'lsclk', 'could', 'means', 'clocks', 'boot']
+
+Cluster  18
+['feedback', 'incorporated', 'zone', 'texas', 'correctness.', 'revision', 'copyright', 'instruments']
+
+Cluster  19
+['operational.', 'update', 'dis', 'ccntx', 'period', 'cprdx', 'register.', 'pwm']
+
+Cluster  20
+['specification', 'suspend', 'applied', 'transfer.', 'halfword', 'missing', 'panel']
+
+Cluster  21
+['workarounds', 'hence']
+
+Cluster  22
+['master', 'behavior', 'spi', 'configured', 'consecutively']
+
+Cluster  23
+['ms', 'failure', 'rom', 'pulled', 'bit.', 'requires', 'dependent', 'block', 'supported.']
+
+Cluster  24
+['wdv', 'values', 'xfff']
+
+Cluster  25
+['bcache', 'edma', 'ownership', 'waits', 'pend', 'sem', 'syncsemaphore', 'processing']
+
+Cluster  26
+['void', 'never', 'config', 'perform', 'handler', 'sure', 'user', 'rewriting', 'sysc', 'interrupt.', 'command', 'soft']
+
+Cluster  27
+['df', 'xdff', 'f.', 'ff', 'xbff', 'bf']
+
+Cluster  28
+['interrupt', 'poll', 'sr.', 'event', 'rtt', 'polling', 'handle', 'vr', 'kick']
+
+Cluster  29
+['break', 'sees', 'ursts', 'secondary', 'div', 'comes', 'proc', 'implement', 'integrates', 'reached', 'periph', 'rstc', 'txbufe', 'match.']
+
+Cluster  30
+['txd', 'io', 'load.', 'nop', 'relative', 'method', 'schmitt']
+
+Cluster  31
+['push', 'pc']
+
+Cluster  32
+['emit', 'khz', 'meet', 'pin']
+
+Cluster  33
+['wdt', 'fault', 'trigger', 'wdfien', 'dispatch', 'wdrsten', 'watchdog', 'supervisor', 'timer']
+
+Cluster  34
+['appear.', 'chip', 'multiple', 'ncpha', 'using', 'cpol', 'issue']
+
+Cluster  35
+['divide', 'negative', 'hold', 'approximately', 'vref', 'flow', 'wide', 'reference', 'txmb', 'mcu', 'ahb', 'adds', 'scan', 'burst.', 'cached', 'sdrams', 'swing', 'frequent', 'workaround', 'dqsin', 'grants', 'skew', 'margin', 'initialization', 'drives', 'driven', 'peripherals', 'generally', 'oe', 'circuit', 'dtd', 'unused', 'rtc', 'asserted', 'source', 'active.', 'single', 'ddr', 'delay', 'matrix', 'supports', 'ghz', 'cki', 'supported', 'patterns']
+
+Cluster  36
+['cannot', 'condition.']
+
+Cluster  37
+['maximum', 'current', 'vddin', 'deep', 'vddcore', 'consumption', 'rejection', 'a.']
+
+Cluster  38
+['data.', 'synchronous', 'asynchronous', 'wire', 'controller', 'universal']
+
+Cluster  39
+['n', 'r', 'm', 'f', 'h']
+
+Cluster  40
+['transmit', 'begin', 'fill']
+
+Cluster  41
+['provide', 'loader', 'cpu.', 'applications.', 'via', 'implies', 'ecm']
+
+Cluster  42
+['conversi', 'lcdr', 'cdry', 'reading', 'twi.', 'cdr', 'disabling', 'cdri', 'addition']
+
+Cluster  43
+['writes', 'interface', 'emac']
+
+Cluster  44
+['k', 'marking', 'refer', 'section', 'page', 'parts']
+
+Cluster  45
+['total', 'bank', 'initialization.', 'rx', 'booting', 'degradation', 'lcd', 'compensate', 'shared', 'application.', 'accesses', 'performance', 'outside', 'driver', 'scr', 'systems', 'found', 'generate', 'performance.', 'added', 'won', 'ensures', 'grant', 'defined', 'contention', 'observed', 'asserts', 'simple', 'masters', 'h.']
+
+Cluster  46
+['pupd', 'link', 'located']
+
+Cluster  47
+['idle', 'transferred', 'twice.', 'shifter.', 'imply']
+
+Cluster  48
+['destined', 'sharing', 'dirty', 'clean', 'replaced', 'flux', 'line', 'evicts']
+
+Cluster  49
+['order', 'occurring', 'skip', 'put', 'ovre', 'spurious']
+
+Cluster  50
+['equal']
+
+Cluster  51
+['purpose', 'security', 'lockx', 'gpnvmx']
+
+Cluster  52
+['lowest', 'slow', 'alms', 'occurs', 'within', 'rttinc']
+
+Cluster  53
+['up.', 'core.', 'vih', 'vpull', 'stabilizes', 'min', 'voltage']
+
+Cluster  54
+['xoff', 'still', 'buffer', 'remote', 'sent', 'detected', 'full.', 'transmitting.']
+
+Cluster  55
+['second', 'implemented', 'onfi', 'filter', 'delays', 'devices', 'physical', 'size', 'extended', 'actions', 'memories', 'requiring', 'initiates', 'horizontal', 'operation', 'part', 'mobile', 'impact', 'connection', 'ba', 'similar', 'doesn', 'column', 'bus']
+
+Cluster  56
+['channel.', 'regardless', 'enable', 'sets']
+
+Cluster  57
+['circuitry', 'root', 'operations', 'syncflash', 'occur', 'continuous', 'process.', 'default', 'code', 'particular', 'occur.', 'emmc', 'allowing', 'sd', 'unpredictable']
+
+Cluster  58
+['vector', 'hours', 'invoke', 'lifetimes', 'representative', 'local', 'phy', 'rest']
+
+Cluster  59
+['turn', 'fall', 'ethernet.', 'txconsumeindex']
+
+Cluster  60
+['applic', 'applicable', 'appear', 'buffered', 'able']
+
+Cluster  61
+['exceptions', 'specifications.', 'design', 'known', 'highlight', 'notes', 'www.ti.com', 'specifications', 'functional', 'usage', 'advisories', 'describes']
+
+Cluster  62
+['therefore', 'patch', 'requests', 'software.', 'handled', 'making', 'modes', 'good', 'ram', 'ms.', 'usb', 'line.', 'later.', 'powered']
+
+Cluster  63
+['internally', 'corresponding', 'stays', 'sr', 'status', 'disabled', 'chidx', 'erratic']
+
+Cluster  64
+['slew', 'primary', 'armsrc', 'layout', 'etc.', 'enirq', 'scope', 'hall', 'er', 'packet', 'associated', 'ctrl', 'except', 'pcb', 'rwa', 'upon', 'individual', 'uart', 'fast', 'failures', 'gr', 'boot.', 'actual', 'six', 'sic', 'transitions', 'based', 'bulk', 'incr', 'restore', 'sizes', 'bug', 'june']
+
+Cluster  65
+['megamodule', 'tms']
+
+Cluster  66
+['altered', 'extmode', 'describe', 'vpbdiv', 'extpolar']
+
+Cluster  67
+['msbf', 'falling', 'first', 'sent.', 'synchro', 'rising', 'tag', 'need']
+
+Cluster  68
+['idma', 'tion', 'cpuarbu', 'uint']
+
+Cluster  69
+['reserved.', 'rights', 'nxp', 'b.v.']
+
+Cluster  70
+['voltages', 'bootcfg', 'exposed', 'instruction.']
+
+Cluster  71
+['twice', 'reset', 'needs', 'spien', 'invoked', 'swrstin', 'software']
+
+Cluster  72
+['conflicts', 'addrx', 'processed']
+
+Cluster  73
+['likelihood', 'spdr', 'protocol', 'srp', 'shorter', 'examples', 'pulses.', 'session', 'initialize', 'controls', 'shorter.', 'otg']
+
+Cluster  74
+['ohms.', 'eld', 'captured', 'recognized.']
+
+Cluster  75
+['even', 'increasing', 'used.', 'aborted', 'alarm', 'mandatory', 'procedure', 'save', 'steps', 'missed.', 'post', 'support', 'inside', 'nf', 'apbh', 'bytes.', 'sample', 'applications', 'i.mx', 'card', 'standby', 'xx', 'middle', 'operation.', 'specified', 'moved', 'list', 'ffff', 'full', 'banks', 'it.', 'projected', 'leading', 'statement', 'instruction', 'acceptance', 'message', 'scale', 'application', 'issued', 'continues', 'tools', 'completes', 'fifo.', 'cf', 'count']
+
+Cluster  76
+['above.', 'ineffective.', 'zeros', 'reception.', 'makes']
+
+Cluster  77
+['errata.', 'requirements', 'syscfg', 'according', 'range.', 'kv', 'described', 'vbat']
+
+Cluster  78
+['wrong', 'spck.', 'everything', 'ok', 'odd', 'transmitted']
+
+Cluster  79
+['smc', 'packet.', 'descriptors.', 'completing']
+
+Cluster  80
+['word', 'half', 'resolution', 'abt', 'resolution.']
+
+Cluster  81
+['end', 'conversion', 'channel', 'running', 'converted']
+
+Cluster  82
+['peripheral', 'nd', 'generation', 'i.e.', 'serial', 'ability']
+
+Cluster  83
+['recommended', 'mode', 'slave', 'spif']
+
+Cluster  84
+['td', 'assembly.', 'schematic']
+
+Cluster  85
+['vdd', 'values.', 'corrected', 'built', 'compiler', 'supply', 'gt', 'involves', 'wakes', 'define', 'original']
+
+Cluster  86
+['work', 'speeds', 'kbauds.', 'handshake', 'number.']
+
+Cluster  87
+['seen', 'occurrence', 'domain']
+
+Cluster  88
+['mhz.', 'frequencies', 'wait', 'simultaneously.', 'operating', 'fws', 'stated', 'states', 'state.', 'lower']
+
+Cluster  89
+['cycle', 'register', 'value']
+
+Cluster  90
+['feature', 'stop', 'result', 'timeguard', 'without', 'taken', 'deferred', 'conditions.', 'regval']
+
+Cluster  91
+['slowest', 'transfers', 'different', 'baudrate', 'follows', 'sampled']
+
+Cluster  92
+['na', 'typical', 'case', 'pad', 'worst', 'per']
+
+Cluster  93
+['circuits']
+
+Cluster  94
+['multiplexed', 'digital', 'pull', 'lines', 'inputs']
+
+Cluster  95
+['active', 'already', 'kept', 'note', 'rise.', 'rises', 'expected.']
+
+Cluster  96
+['segments', 'granted', 'cpu', 'mdma', 'sdma', 'step', 'partial', 'overlap']
+
+Cluster  97
+['txcomp', 'non', 'twi']
+
+Cluster  98
+['transfers.', 'burst', 'maintained', 'required', 'use', 'cs']
+
+Cluster  99
+['identify', 'ideally', 'information']
+
+Cluster  100
+['precede', 'try']
+
+Cluster  101
+['activation', 'de', 'character', 'slave.', 'npcs']
+
+Cluster  102
+['events']
+
+Cluster  103
+['limited', 'erroneous', 'unexpected', 'outputs', 'oscillator', 'divided', 'frequency.', 'slot', 'early', 'generated', 'program', 'rk', 'occurred', 'cks', 'selection', 'irc']
+
+Cluster  104
+['chipintn', 'thre', 'responds', 'gets']
+
+Cluster  105
+['vil', 'ramped']
+
+Cluster  106
+['pmc', 'changing', 'mckr', 'css', 'mckr.']
+
+Cluster  107
+['ext', 'ahclkr', 'aclkr']
+
+Cluster  108
+['is.', 'performed', 'soon', 'pdc', 'fixed', 'whatever', 'transfer']
+
+Cluster  109
+['ckdiv', 'less', 'chdiv']
+
+Cluster  110
+['address', 'select.', 'transmitting', 'tdr', 'complete', 'depending']
+
+Cluster  111
+['third', 'manner', 'aborts', 'recoverable', 'otherwise']
+
+Cluster  112
+['new', 'overrun', 'general', 'flag.', 'inactive', 'correspond', 'govre']
+
+Cluster  113
+['edges.', 'adc.', 'adcr', 'bits.']
+
+Cluster  114
+['clock', 'frequency', 'system', 'clock.']
+
+Cluster  115
+['affect', 'keep', 'pcmcia', 'fix', 'solutions', 'release', 'several', 'scenario', 'core', 'latch', 'prevent', 'cases', 'en', 'get', 'ssp', 'ssi', 'settings', 'combined', 'samples', 'emacb', 'large', 'increments', 'affected.', 'susceptible', 'return', 'refresh', 'beginning', 'mmc', 'controller.', 'continue', 'properly', 'apply', 'sufficiently', 'special', 'false', 'device', 'operated', 'hsadc', 'size.', 'increases', 'oscsel']
+
+Cluster  116
+['unintended', 'emc', 'kbps', 'dedicated', 'gpi', 'dmaccxcontrol', 'dest', 'memories.', 'transactions', 'completed', 'fcpuclk']
+
+Cluster  117
+['operate', 'near', 'functionality', 'avoided.']
+
+Cluster  118
+['updated', 'flag', 'set.', 'uhp', 'clear', 'conversion.', 'adc', 'settings.']
+
+Cluster  119
+['successively', 'channels', 'another', 'yet']
+
+Cluster  120
+['nrst', 'characteristics', 'pa', 'electrical', 'pio']
+
+Cluster  121
+['causes', 'leakage', 'vddio.']
+
+Cluster  122
+['consists', 'statuses.', 'mb', 'indicates', 'hsuart.', 'fifo', 'eventually', 'devices.', 'random', 'bus.', 'weak', 'receives', 'asserted.', 'incorrectly', 'enters', 'rw', 'floating', 'reception', 'throughput', 'case.', 'input.', 'transmission.', 'entering', 'ew', 'care', 'place', 'require', 'threshold', 'situation', 'misalignment', 'transceiver', 'remain', 'loopback', 'communication', 'th', 'vic', 'glitch', 'always', 'hard', 'reduce', 'buffers', 'expecting', 'daisy', 'scheme', 'occurring.', 'throughput.', 'range', 'video', 'fetch', 'maintains', 'received.', 'providing', 'sdram', 'ebi', 'optionally', 'happens', 'avoid', 'noise', 'limit', 'happen']
+
+Cluster  123
+['workaround.', 'area', 'self', 'defines', 'drops', 'performed.']
+
+Cluster  124
+['updates', 'msr', 'cpsr']
+
+Cluster  125
+['aic', 'sys', 'go', 'rts']
+
+Cluster  126
+['left', 'aligned', 'mode.', 'start', 'cdtyx', 'center']
+
+Cluster  127
+['datasheetj', 'error', 'jan']
+
+Cluster  128
+['mr', 'configuring', 'mstr', 'registers.', 'csrx']
+
+Cluster  129
+['writing', 'check', 'setting', 'modified', 'directly', 'duty', 'counter', 'constraints']
+
+Cluster  130
+['literature', 'guide']
+
+Cluster  131
+['provided', 'vpbdiv.', 'files']
+
+Cluster  132
+['primitive', 'gen', 'alignp', 'pattern']
+
+Cluster  133
+['supplies', 'dvdd', 'manually.', 'mcasp', 'vt']
+
+Cluster  134
+['isr', 'exit', 'ctrlr']
+
+Cluster  135
+['shows', 'tdi', 'jtag', 'look']
+
+Cluster  136
+['port.']
+
+Cluster  137
+['exist', 'synchro.', 'generating', 'lost.', 'problem']
+
+Cluster  138
+['includes', 'volatile', 'lock', 'nvm']
+
+Cluster  139
+['external', 'store', 'instead.', 'int']
+
+Cluster  140
+['advisory', 'title', '................................']
+
+Cluster  141
+['oct', 'manufacturing', 'none.', 'atarm', 'errata', 'inverter.', 'add']
+
+Cluster  142
+['aintc.', 'starvation', 'allocate', 'edge.', 'accessing']
+
+Cluster  143
+['guaranteed', 'guaranteed.', 'instead']
+
+Cluster  144
+['timer.', 'starts', 'mckrdy']
+
+Cluster  145
+['selects', 'scbr', 'considered', 'select', 'differ', 'frame.', 'others', 'configuration']
+
+Cluster  146
+['fsr']
+
+Cluster  147
+['mul', 'value.', 'pres', 'elds', 'unless', 'stopped', 'ones']
+
+Cluster  148
+['capx', 'rtcx', 'execute', 'marked', 'other.']
+
+Cluster  149
+['rail', 'phase', 'busy', 'mci', 'hccontrol.hcfs', 'emission', 'done', 'vctrl', 'trsh', 'documented', 'unknown', 'routine']
+
+Cluster  150
+['dependent.']
+
+Cluster  151
+['initiate', 'impossible', 'twck']
+
+Cluster  152
+['sm', 'pdn']
+
+Cluster  153
+['intended']
+
+Cluster  154
+['mean', 'compensation']
+
+Cluster  155
+['tc']
+
+Cluster  156
+['variations']
+
+Cluster  157
+['rn', 'pru', 'increase', 'deadlock', 'iram', 'entire', 'rbl', 'ram.', 'offset']
+
+Cluster  158
+['updated.']
+
+Cluster  159
+['esd.', 'estimated', 'configures']
+
+Cluster  160
+['enabled', 'o', 'u', 'w', 'g', 'e']
+
+Cluster  161
+['diagram']
+
+Cluster  162
+['rxbuff', 'endtx', 'mac', 'missed', 'arm', 'flags', 'endrx', 'appropriate', 'corrupted.', 'ags', 'endian', 'establishment', 'priority', 'sensitive']
+
+Cluster  163
+['way', 'depend', 'field', 'csr', 'csry']
+
+Cluster  164
+['file']
+
+Cluster  165
+['deviations', 'comparator', 'existing', 'detail']
+
+Cluster  166
+['slaves', 'dlybcs.']
+
+Cluster  167
+['cmd', 'ignored', 'base', 'account', 'commands', 'wakeup', 'additionally']
+
+Cluster  168
+['peripherals.']
+
+Cluster  169
+['unit', '.m', 'mix', 'saturation']
+
+Cluster  170
+['working', 'directory', 'pullup', 'resistance', 'pulldown', 'assuming']
+
+Cluster  171
+['cdrx', 'sampling', 'stored', 'lcdr.']
+
+Cluster  172
+['solution', 'apb', 'counted', 'recommendations']
+
+Cluster  173
+['account.', 'rxbrk', 'registers', 'correctly']
+
+Cluster  174
+['easy', 'dual', 'ios']
+
+Cluster  175
+['flags.', 'prefetch']
+
+Cluster  176
+['path']
+
+Cluster  177
+['sata', 'intended.']
+
+Cluster  178
+['dcdc', 'removed', 'timings', 'subsequent', 'times', 'hw']
+
+Cluster  179
+['thr', 'transmitted.', 'content', 'also', 'empty', 'us']
+
+Cluster  180
+['tsleep']
+
+Cluster  181
+['group', 'emulation', 'requests.']
+
+Cluster  182
+['machine', 'timings.', 'change', 'sck', 'xor', 'signals']
+
+Cluster  183
+['revision.']
+
+Cluster  184
+['host.']
+
+Cluster  185
+['saved', 'loads', 'thumb', 'dv']
+
+Cluster  186
+['execution', 'fully', 'mam', 'partially']
+
+Cluster  187
+['ranges', 'ensure', 'output.', 'programming', 'determine', 'executing', 'polarity', 'run']
+
+Cluster  188
+['activated', 'take', 'activity', 'activate', 'effect']
+
+Cluster  189
+['schedule']
+
+Cluster  190
+['frozen', 'swrst', 'control', 'progress', 'immediately']
+
+Cluster  191
+['wdd', 'depends', 'jump']
+
+Cluster  192
+['executed', 'transaction.', 'con', 'limitation', 'request', 'avoided', 'skips', 'transaction']
+
+Cluster  193
+['specifically']
+
+Cluster  194
+['pseudo']
+
+Cluster  195
+['z']
+
+Cluster  196
+['respective']
+
+Cluster  197
+['priorities', 'bandwidth', 'traffic', 'enough', 'cache.']
+
+Cluster  198
+['abort', 'options', 'chn', 'holds', 'lut']
+
+Cluster  199
+['negotiation']
+
+Cluster  200
+['manages', 'writeback', 'dashed', 'implementing', 'stalling']
+
+Cluster  201
+['cfgchip', 'usbphy']
+
+Cluster  202
+['given', 'going', 'consecutive', 'send', 'started', 'gured']
+
+Cluster  203
+['circumstances', 'may', 'certain', 'rare']
+
+Cluster  204
+['v', 'j']
+
+Cluster  205
+['needed.', 'make', 'either', 'internal']
+
+Cluster  206
+['blocksize']
+
+Cluster  207
+['mpeg', 'changes', 'mv', 'hsuart', 'recovery', 'enter', 'service', 'latency', 'errors', 'canx', 'board', 'prevents', 'global', 'incoming', 'whenever', 'indicate', 'ideal', 'detect', 'seen.', 'disabled.', 'filtering', 'dribble', 'interval', 'mask', 'accept', 'help', 'shifted', 'sometimes', 'rxmb', 'invalid', 'codec', 'rxgmask', 'mismatch', 'masks', 'pending', 'time.', 'ecc', 'brownout', 'latched', 'configure', 'command.', 'become', 'introduces', 'highest', 'chance']
+
+Cluster  208
+['holding', 'corruption', 'arithmetic', 'receive']
+
+Cluster  209
+['lpc', 'usb.', 'es', 'ac', 'rev.', 'july', 'april']
+
+Cluster  210
+['fsx', 'clkx', 'clkr']
+
+Cluster  211
+['ramps']
+
+Cluster  212
+['recently']
+
+Cluster  213
+['one', 'baud', 'scrx', 'rate', 'least', 'significant']
+
+Cluster  214
+['messages', 'mmr']
+
+Cluster  215
+['wrapping', 'txdescriptornumber', 'trying', 'index']
+
+Cluster  216
+['q']
+
+Cluster  217
+['dsr', 'delta']
+
+Cluster  218
+['levels.']
+
+Cluster  219
+['unable']
+
+Cluster  220
+['maintain']
+
+Cluster  221
+['bi']
+
+Cluster  222
+['pclk', 'probability', 'rev']
+
+Cluster  223
+['firmware']
+
+Cluster  224
+['write', 'cycles', 'erase', 'number']
+
+Cluster  225
+['ma', 'parallel', 'bootloader', 'load', 'c.']
+
+Cluster  226
+['quality']
+
+Cluster  227
+['victim', 'snoop']
+
+Cluster  228
+['force', 'changed', 'setup', 'gate', 'restricted', 're', 'enables', 'fail', 'loaded', 'three', 'recognize', 'stall', 'apbx', 'weim', 'lcdc', 'produce', 'fs', 'releases', 'turned', 'fce', 'fails', 'region', 'reduced', 'nand', 'dtack', 'heavily', 'restart', 'slots', 'replaces', 'guration', 'detected.', 'interpreted', 'ecb', 'rst', 'cko', 'achieve', 'sufficient', 'thus', 'logic', 'only.', 'selecting']
+
+Cluster  229
+['wr']
+
+Cluster  230
+['halted']
+
+Cluster  231
+['description', 'rl', 'd.', 'pointer', 'sdramc', 'xa', 'prepare', 'tr', 'compare', 'response', 'str', 'ldr', 'pxp', 'rcr']
+
+Cluster  232
+['window.']
+
+Cluster  233
+['sleep', 'possible', 'charge', 'disable']
+
+Cluster  234
+['speed.', 'target', 'attached']
+
+Cluster  235
+['capacitors', 'block.']
+
+Cluster  236
+['switches', 'spck', 'toggle']
+
+Cluster  237
+['resources']
+
+Cluster  238
+['lsr', 'pd', 'iir']
+
+Cluster  239
+['file.']
+
+Cluster  240
+['replace', 'subsystem', 'cache']
+
+Cluster  241
+['passes']
+
+Cluster  242
+['ssc', 'periodic', 'transmission', 'transmitter', 'characters', 'limitations']
+
+Cluster  243
+['fixes']
+
+Cluster  244
+['causing', 'clears', 'automatically', 'related', 'neither', 'occurs.', 'instant', 'although', 'eoc']
+
+Cluster  245
+['initialized', 'cpha']
+
+Cluster  246
+['edge', 'cap', 'mat', 'incorrect', 'periods', 'starting']
+
+Cluster  247
+['binary']
+
+Cluster  248
+['rc', 'aclkrx', 'axr', 'cpuint', 'behaviors', 'accuracy']
+
+Cluster  249
+['tps']
+
+Cluster  250
+['triggers', 'violation']
+
+Cluster  251
+['spare']
+
+Cluster  252
+['duplex', 'assembly', 'temperature']
+
+Cluster  253
+['eliminate']
+
+Cluster  254
+['resume', 'begins', 'increment', 'sends', 'losing', 'raises', 'sending', 'rxida', 'fmi', 'capable', 'stops', 'ag', 'valid', 'tries', 'token', 'supposed', 'indefinitely', 'issues', 'process', 'parity', 'sequence', 'host', 'eop']
+
+Cluster  255
+['hangs']
+
+Cluster  256
+['indication']
+
+Cluster  257
+['red']
+
+Cluster  258
+['.']
+
+Cluster  259
+['chipsign', 'aintc', 'txrdy']
+
+Cluster  260
+['hung']
+
+Cluster  261
+['silicon', 'revisions', 'important', 'documentation', 'submit']
+
+Cluster  262
+['xfa']
+
+Cluster  263
+['view']
+
+Cluster  264
+['shunt']
+
+Cluster  265
+['flash', 'memory', 'kb', 'remains']
+
+Cluster  266
+['strong']
+
+Cluster  267
+['mem', 'buff', 'malloc', 'alloc']
+
+Cluster  268
+['temperatures']
+
+Cluster  269
+['gnd']
+
+Cluster  270
+['dlybct', 'dlybcs', 'expected', 'code.']
+
+Cluster  271
+['identifiers']
+
+Cluster  272
+['domains']
+
+Cluster  273
+['paths']
+
+Cluster  274
+['rise', 'example', 'txempty', 'whereas', 'stored.']
+
+Cluster  275
+['corrupt', 'clean.', 'previously']
+
+Cluster  276
+['emifb', 'takes', 'alternate', 'ramp', 'place.']
+
+Cluster  277
+['calibrated']
+
+Cluster  278
+['update.', 'machine.', 'counter.', 'side', 'receiver', 'recover', 'power', 'connected']
+
+Cluster  279
+['call', 'allocation', 'bios']
+
+Cluster  280
+['following', 'conditions']
+
+Cluster  281
+['architecture']
+
+Cluster  282
+['counters', 'interrupts', 'rxrdy']
+
+Cluster  283
+['posts', 'boundaries.', 'saturation.', 'aligning', 'branch']
+
+Cluster  284
+['report']
+
+Cluster  285
+['identified']
+
+Cluster  286
+['install']
+
+Cluster  287
+['edges', 'real', 'match', 'capture']
+
+Cluster  288
+['approach', 'splitpower', 'sat', 'ssr']
+
+Cluster  289
+['sprufk']
+
+Cluster  290
+['section.']
+
+Cluster  291
+['received', 'corrupted', 'byte', 'cr', 'frame', 'written', 'lost']
+
+Cluster  292
+['refers']
+
+Cluster  293
+['ckxh']
+
+Cluster  294
+['bad', 'tx', 'lastxfer', 'ready', 'csaat']
+
+Cluster  295
+['can.']
+
+Cluster  296
+['mapped']
+
+Cluster  297
+['uhpi']
+
+Cluster  298
+['pre']
+
+Cluster  299
+['stale']
+
+Cluster  300
+['phypdwn']
+
+Cluster  301
+['selected', 'equals', 'enabling', 'completion']
+
+Cluster  302
+['four', 'handling', 'temperature.', 'type', 'hsuarts', 'expects', 'affected', 'prevented', 'resistor', 'available.', 'standard', 'uses', 'tool', 'though', 'sub', 'however', 'applies', 'adding', 'bpp', 'precautions', 'shifting', 'functions', 'destination', 'interference.', 'longer', 'armdiv', 'pin.', 'window', 'shown', 'receiving', 'sheet', 'stuck', 'potential', 'normal', 'typically', 'shot', 'mark', 'observe', 'termination', 'speed', 'critical', 'provides', 'results', 'cable', 'pass', 'followed', 'short', 'capability', 'beyond', 'arbitration', 'signaling', 'double', 'determined', 'find', 'assertion', 'interface.', 'close', 'reads.', 'reads', 'affects', 'connecting', 'connector', 'called', 'problem.', 'uarts', 'problems', 'meaning', 'insertion', 'extreme', 'resulting', 'next', 'blocks', 'produces', 'tsu', 'resistors', 'programmable', 'behavior.', 'overall', 'requirement', 'dll', 'operations.', 'present', 'nclk', 'increased', 'proper', 'sdramclk', 'esd', 'var', 'function', 'chained', 'placed', 'writes.']
+
+Cluster  303
+['ema']
+
+Cluster  304
+['analog', 'converter']
+
+Cluster  305
+['locations']
+
+Cluster  306
+['dc', 'id']
+
+Cluster  307
+['mast']
+
+Cluster  308
+['wasted']
+
+Cluster  309
+['direct', 'test', 'osc', 'date', 'possible.', 'instructions', 'startup', 'issue.', 'customer']
+
+Cluster  310
+['cpuintn']
+
+Cluster  311
+['recovered']
+
+Cluster  312
+['associative']
+
+Cluster  313
+['used', 'goes', 'handshaking', 'cts', 'hardware']
+
+Cluster  314
+['rd']
+
+Cluster  315
+['isp']
+
+Cluster  316
+['duration']
+
+Cluster  317
+['coherence']
+
+Cluster  318
+['situations', 'presumed']
+
+Cluster  319
+['miso', 'period.']
+
+Cluster  320
+['map', 'impedance', 'malfunction', 'higher']
+
+Cluster  321
+['clkh']
+
+Cluster  322
+['bits', 'read', 'bit']
+
+Cluster  323
+['combination', 'reset.', 'condition']
+
+Cluster  324
+['pinselx']
+
+Cluster  325
+['possibly', 'cleared', 'skipped', 'due']
+
+Cluster  326
+['capacitance']
+
+Cluster  327
+['reach']
+
+Cluster  328
+['open', 'please', 'applicable.', 'necessary']
+
+Cluster  329
+['ais', 'premature', 'context']
+
+Cluster  330
+['versus']
+
+Cluster  331
+['fetched']
+
+Cluster  332
+['xdma']
+
+Cluster  333
+['pinsel']
+
+Cluster  334
+['contain']
+
+Cluster  335
+['finds']
+
+Cluster  336
+['typ', 'max', 'no.', 'vddio', 'mcbsp', 'lvcmos', 'pdmax', 'parameter', 'v.']
+
+Cluster  337
+['forces']
+
+Cluster  338
+['choose']
+
+Cluster  339
+['zero.', 'sram', 'logical', 'drive', 'ohms']
+
+Cluster  340
+['mamtim']
+
+Cluster  341
+['cclksel']
+
+Cluster  342
+['reliability']
+
+Cluster  343
+['everlasting', 'else', 'function.']
+
+Cluster  344
+['cvdd', 'later', 'experience']
+
+Cluster  345
+['nominal']
+
+Cluster  346
+['posted']
+
+Cluster  347
+['management', 'device.', 'delayed', 'connect', 'plla']
+
+Cluster  348
+['uncorrectable']
+
+Cluster  349
+['guarantee', 'checks', 'rom.', 'manager', 'memory.', 'correct', 'ccr', 'consequence', 'vddbu', 'signal.', 'boots', 'manage', 'much', 'unsigned', 'triggered', 'dma']
+
+Cluster  350
+['interrupts.']
+
+Cluster  351
+['suppose', 'desired']
+
+Cluster  352
+['cppi']
+
+Cluster  353
+['lifetime']
+
+Cluster  354
+['listed']
+
+Cluster  355
+['explicit']
+
+Cluster  356
+['x', 'stmia']
+
+Cluster  357
+['points']
+
+Cluster  358
+['green']
+
+Cluster  359
+['blocking']
+
+Cluster  360
+['task']
+
+Cluster  361
+['two']
+
+Cluster  362
+['p', 'd', 'l', 'b', 'c', 'y']
+
+Cluster  363
+['mgmt']
+
+Cluster  364
+['whose', 'cause', 'shdn', 'warm', 'voltage.', 'performing', 'space', 'correction', 'state', 'mbyte', 'assert', 'achieved', 'mpll', 'exceed', 'include', 'cycle.', 'likely', 'like', 'whether']
+
+Cluster  365
+['overwrite', 'teardown']
+
+Cluster  366
+['must']
+
+Cluster  367
+['transition', 'output', 'requested', 'tk', 'tf', 'current.', 'input', 'programmed']
+
+Cluster  368
+['dx', 'conversions', 'field.', 'controlled', 'repeated']
+
+Cluster  369
+['easily', 'bwm']
+
+Cluster  370
+['dcache']
+
+Cluster  371
+['zero', 'regulator', 'deadline', 'reaches', 'table']
+
+Cluster  372
+['emifa', 'figure', 'processor']
+
+Cluster  373
+['scu']
+
+Cluster  374
+['forcing']
+
+Cluster  375
+['inst']
+
+Cluster  376
+['levels']
+
+Cluster  377
+['psc']
+
+Cluster  378
+['dst', 'mstpri', 'pri', 'arbitra', 'cnt']
+
+Cluster  379
+['boundaries']
+
+Cluster  380
+['underflow']
+
+Cluster  381
+['set']
+
+Cluster  382
+['dma.']
+
+Cluster  383
+['nwe', 'recommend', 'earlier', 'clk', 'fig', 'free', 'mbit', 'needed', 'access.', 'pins.', 'dm', 'dq', 'dycsx', 'accessed', 'ncas', 'basic', 'fpga', 'port', 'addr', 'kohms', 'signaling.', 'pins', 'su', 'ddrs', 'ddr.', 'xe', 'eliminates', 'trace', 'uf', 'across', 'functional.', 'gpio', 'src', 'contains', 'minimum', 'actually', 'ncs', 'bytes', 'ps', 'loop', 'read.', 'remaining', 'back', 'inches', 'waiting', 'high.', 'allow', 'noise.', 'auto', 'nras', 'static', 'length', 'onsw', 'cke', 'timing', 'differential', 'mcpwm', 'vddq', 'dqs', 'point', 'dqm', 'extra']
+
+Cluster  384
+['ckgr', 'embedded', 'efc']
+
+Cluster  385
+['future', 'revisions.']
+
+Cluster  386
+['permanently']
+
+Cluster  387
+['exceeds']
+
+Cluster  388
+['etm']
+
+Cluster  389
+['modify', 'parameters', 'fastest']
+
+Cluster  390
+['performs']
+
+Cluster  391
+['oppose', 'fcco', 'mhz']
+
+Cluster  392
+['types', 'cldiv', 'reliably']
+
+Cluster  393
+['clocked', 'aclkxctl.async', 'location']
+
+Cluster  394
+['furthermore', 'msdis']
+
+Cluster  395
+['cond']
+
+Cluster  396
+['reside.']
+
+Cluster  397
+['aclkx']
+
+Cluster  398
+['time', 'access']
+
+Cluster  399
+['functionality.']
+
+Cluster  400
+['cmr']
+
+Cluster  401
+['wbinv']
+
+Cluster  402
+['drift']
+
+Cluster  403
+['instructions.']
+
+Cluster  404
+['pconp', 'vsr']
+
+Cluster  405
+['crystal']
+
+Cluster  406
+['data']
+
+Cluster  407
+['platform']
+
+Cluster  408
+['modulation', 'width']
+
+Cluster  409
+['together']
+
+Cluster  410
+['aging']
+
+Cluster  411
+['drop']
+
+Cluster  412
+['charging']
+
+Cluster  413
+['blockptr']
+
+Cluster  414
+['extint.']
+
+Cluster  415
+['thread']
+
+Cluster  416
+['met', 'down.', 'array', 'wake', 'bypass', 'race', 'battery', 'reserved', 'vdda']
+
+Cluster  417
+['hrs', 'spi.', 'version']
+
+Cluster  418
+['dxena', 'subjected']
+
+Cluster  419
+['detection', 'completed.', 'acknowledge', 'nack', 'long']
+]

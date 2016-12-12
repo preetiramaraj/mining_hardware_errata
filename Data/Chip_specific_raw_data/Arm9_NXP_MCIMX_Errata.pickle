@@ -1,0 +1,454 @@
+(lp0
+(dp1
+S'Core'
+p2
+S'ARM9'
+p3
+sS'Errata ID'
+p4
+S'bo57692'
+p5
+sS'Criticality'
+p6
+S'3'
+p7
+sS'Workaround'
+p8
+S'No workaround'
+p9
+sS'Chip'
+p10
+S'MCIMX27'
+p11
+sS'Fix Status'
+p12
+S'No fix planned'
+p13
+sS'Revisions Impacted'
+p14
+S' '
+p15
+sS'Module'
+p16
+S'\xe2\x80\xa2Video \xe2\x80\xa2Codec'
+p17
+sS'Masks Affected'
+p18
+S'0M72J'
+p19
+sS'Failure'
+p20
+S'Video Codec module supporting MV and MVD ranges does not conform with standard.'
+p21
+sS'Details'
+p22
+S'Description: Video Codec module supporting MV and MVD ranges does not conform with the H.264 standard. \xe2\x80\xa2The standard specifies the range of MVD to be \xe2\x80\x934096 to 4095.75. However, the Video Codec module only supports up to \xe2\x80\x932048\xe2\x80\x932047.75. \xe2\x80\xa2The standard specifies that the range of horizontal MV to be \xe2\x80\x932048 to 2047.75. However, the Video Codec module only supports up to \xe2\x80\x931024 to 1023.75. Because the maximum image resolution in the i.MX27 device is 720 \xc3\x97 576, it is not likely to receive a bitstream with MV/MVD in such a large range in real codec applications; therefore, there is no real impact to applications.'
+p23
+sS'Manufacturer'
+p24
+S'NXP'
+p25
+sa(dp26
+g2
+g3
+sg4
+S'bo58229'
+p27
+sg6
+g7
+sg8
+S'No workaround'
+p28
+sg10
+g11
+sg12
+S'No fix planned'
+p29
+sg14
+g15
+sg16
+S'USB'
+p30
+sg18
+g19
+sg20
+S'A remote wake-up can be interpreted as a disconnect.'
+p31
+sg22
+S'Description: In Host mode in the ULPI core, a remote wake-up can be interpreted as a disconnect. This issue involves the latency when asserting in synchronous mode. In some instances, the host will not properly latch the K state. When this occurs, the core wakes up to a J state. Eventually the host will not resume, and will show an SE0 and assume a disconnect occurred.'
+p32
+sg24
+g25
+sa(dp33
+g2
+g3
+sg4
+S'bo57815'
+p34
+sg6
+g7
+sg8
+S' Set EDC field to two breaks, which continues the burst access to  external memory. '
+p35
+sg10
+g11
+sg12
+S' No fix planned'
+p36
+sg14
+g15
+sg16
+S' WEIM '
+p37
+sg18
+g19
+sg20
+S'A burst write  access will miss the  first word when the  burst write follows  another burst  operation'
+p38
+sg22
+S'Description:  When a burst access to WEIM external memory is immediately  followed by another burst access, the first word may be missed at  write-burst access because the eb_b signal comes too late.  Reason:  The ecb_hburst_ecb_fw signal in the WEIM Bus Controller  module has an extra-high pulse, and only one high pulse is  required. '
+p39
+sg24
+g25
+sa(dp40
+g2
+g3
+sg4
+S'bo93263'
+p41
+sg6
+S'2'
+p42
+sg8
+S'\xe2\x80\xa2Set the Latency Hiding Disable (LHD) bit in the ESDCTL DDR Controller ESDMISC register. This adds latency between DDR transactions, removing the ideal data throughput. This should only be done during MPEG-4 encoding and decoding. Note that this reduces performance. During MPEG-4 encoding/decoding, this degradation is acceptable. LHD should not be set during H.264 or H.263 operation. \xe2\x80\xa2Assign all buffers accessed by the video code into the same DRAM bank and ensure every buffer type has a size of integer number of pages. This ensures that there is a page miss between accesses of different sub-masters inside the VPU, increasing the delay. The DRAM is split into four equal sizes called banks, so the bank size is 1/4 of the DRAM size.'
+p43
+sg10
+g11
+sg12
+S'Fixed in silicon revision 2.1'
+p44
+sg14
+g15
+sg16
+S'\xe2\x80\xa2Video \xe2\x80\xa2Codec'
+p45
+sg18
+g19
+sg20
+S'Lockup of Video Codec in MPEG-4 encode or decode Note: Applies only to silicon revision 2.0'
+p46
+sg22
+S'Description: During encoding or decoding MPEG-4, the Video Codec module can lock up. In the combined AXI to AHB and 32\xe2\x80\x9364 gasket, there is a FIFO for read data, which buffers data that is coming from the 64-bit bus faster than the 32-bit bus can accept it. There is no logic to send a request to memory only when the FIFO has room for return data. In a case with ideal data throughput, this FIFO overruns and read data is corrupted. This ideal data throughput only happens during MPEG-4 encoding and decoding.'
+p47
+sg24
+g25
+sa(dp48
+g2
+g3
+sg4
+S'bo93708'
+p49
+sg6
+g7
+sg8
+S' None '
+p50
+sg10
+g11
+sg12
+S' Fixed in silicon revision 2.1'
+p51
+sg14
+g15
+sg16
+S' JTAG Controller '
+p52
+sg18
+g19
+sg20
+S'Boundary scan  fails because of an  internal timing issue.  Note: Applies only to  silicon revision  2.0'
+p53
+sg22
+S'Description:  Timing is not properly extracted for the boundary scan circuitry so  post-layout gate-level simulations did not correctly simulate the  circuit. A race condition prevents proper shifting of data through  the Boundary Scan circuitry. '
+p54
+sg24
+g25
+sa(dp55
+g2
+g3
+sg4
+S'bo95933'
+p56
+sg6
+g42
+sg8
+S'It is recommended to power up and power-down the processor following the power-up and power-down sequence documented in the MCIMX27 Multimedia Applications Processor Data Sheet.'
+p57
+sg10
+g11
+sg12
+S'No fix planned'
+p58
+sg14
+g15
+sg16
+S'IIM'
+p59
+sg18
+g19
+sg20
+S'When the incorrect power-up or power-down sequence is used on the processor, unintentional programming of IIM fuses is possible, regardless of the set FuseVDD voltage, reconfiguring the part permanently.'
+p60
+sg22
+S'Description: Internal fuses on the processor could be unintentionally programmed, regardless of the voltage level set for FuseVDD. Even if FuseVDD is set to 1.8 V (read-only voltage), some processors may be programmed at that voltage. This only happens when the incorrect power-up or power-down sequence is used on the processor.'
+p61
+sg24
+g25
+sa(dp62
+g2
+g3
+sg4
+S'\xe2\x80\x94'
+p63
+sg6
+g42
+sg8
+S'Use software for horizontal resizing when the scale is bigger than two. For example, when the scale is 2.5 for both horizontal and vertical, software should be used to produce the horizontal resize with scale 2, and the Post Processor should do the vertical 2.5 and horizontal 1.25 resize.'
+p64
+sg10
+g11
+sg12
+S'No fix planned'
+p65
+sg14
+g15
+sg16
+S'eMMA PP (Post Processor)'
+p66
+sg18
+g19
+sg20
+S'Resize fails when the horizontal scale is bigger than two.'
+p67
+sg22
+S"Description: The gasket that is between the Post Processor and the EMI cannot support burst accesses when the burst length is equal to or over 16 words. However, the Post Processor will do the burst access over 16 words when it resizes with the horizontal scale over 2. In this case, the Post Processor's access misses the data or will be pending due to no response from the gasket."
+p68
+sg24
+g25
+sa(dp69
+g2
+g3
+sg4
+S'ENGcm11270'
+p70
+sg6
+g7
+sg8
+S' Set AUSx to 0, if address bit A[23] is needed to address the  external device. '
+p71
+sg10
+g11
+sg12
+S' No fix planned'
+p72
+sg14
+g15
+sg16
+S' WEIM '
+p73
+sg18
+g19
+sg20
+S'AUSx bits do not  work for address bit  A[23].  Note: The AUS feature  is not only for  ADDR[25:16]  (Address Bus  MSB), but also  for ADDR[15:0]  (Multiplexed  Address Bus  LSB)'
+p74
+sg22
+S'Description:  The AUS bits in the WEIM Configuration Register (WCR) do not  work for the address bus bit A[23]. The WEIM address bus\xe2\x80\x99 most  significant bits (ADDR[25:16], Address Bus MSB) are used for  address bits [25:16]. If the corresponding AUSx bit (each WEIM  chip select has a corresponding AUS bit) is set to 1 in the WCR  register, then these MSB signals reflect the AHB address bits  [25:16]. If the AUSx bit is set to 0, then these signals should  represent AHB address bits [27:18] for word width memory,  [26:17] for half word width memory, and [25:16] for byte-width  memory. The error occurs when the AUSx bit is set to 1, which  causes the A[23] bit to not match the correct value of the  corresponding AHB address bit.  Reason:  This errata affects all Chip-Select regions (that is, CS0\xe2\x80\x93CS5). You  cannot use the WEIM AUS feature to use un-shifted address  mode if address bit A[23] is needed to address the external  memory device. '
+p75
+sg24
+g25
+sa(dp76
+g2
+g3
+sg4
+S'ENGcm11409'
+p77
+sg6
+g42
+sg8
+S' If external device asserts ECB_B signal during burst access in  FCE = 1 mode, use FCE = 0 mode instead. '
+p78
+sg10
+g11
+sg12
+S' No fix planned'
+p79
+sg14
+g15
+sg16
+S' WEIM '
+p80
+sg18
+g19
+sg20
+S'In FCE = 1  mode, WEIM cannot  correctly sample the  data if there is ECB  asserted during burst  access'
+p81
+sg22
+S'Description:  End current burst (WAIT). This active-low input signal ECB is  asserted by external burst capable devices. It is serviced only in  synchronous mode (SYNC = 1).This signal can be used in the  following modes depending on the EW bit in the Chip Select  Control Register.  \xe2\x80\xa2 In the ECB mode (EW = 0), ECB indicates the end of the  current (continuous) burst sequence. Following assertion, the  WEIM terminates the current burst sequence and initiates a  new one.  \xe2\x80\xa2 In the WAIT mode (EW = 1), the memory device asserts this  signal to insert WAIT states during refresh collisions or during  a row boundary crossing. Following assertion, the WEIM does  not terminate the current burst sequence and continues it once  WAIT is negated.  FCE is a parameter in the register CSCRxA that is used to enable  or disable feedback clock:  \xe2\x80\xa2 If FCE = 0, WEIM samples the data by internal AHB bus clock.  \xe2\x80\xa2 If FCE = 1, WEIM samples the data by BCLK_FB signal that is  from PAD.  \xe2\x80\xa2 If FCE is configured to 1 and there is ECB assertion during  access, WEIM does not sample the correct data.  Reason:  You cannot use FCE = 1 mode when there is ECB assertion  during access. '
+p82
+sg24
+g25
+sa(dp83
+g2
+g3
+sg4
+S'ENGcm11563'
+p84
+sg6
+g42
+sg8
+S' There are both a hardware and a software workaround. To  guarantee correct operation, the software workaround should  only be applied to devices that have had the new PLL test applied.  The test will be applied from a date code 1105:  \xe2\x80\xa2 Workaround 1\xe2\x80\x94Hardware:  Keep MPLLVDD < 200 mV during the initial part of the power-up  sequence and delay the MPLLVDD supply with respect to QVDD,  NVDD5, and AVDD. See Figure 1 for a recommended power-up  sequence. This workaround sets the uninitialized node to the  correct state enabling the appropriate 399 MHz clock output duty  cycle. For the clock switching errata workaround, the following  conditions must be satisfied:  \xe2\x80\x93 QVDD must be powered up before MPLLVDD.  \xe2\x80\x93 NVCC5 must be powered up before MPLLVDD. (This is  required for the POR_B signal to propagate to the clock  gating logic.)  \xe2\x80\x93 AVDD must be powered up before MPLLVDD. (This is  required for the POR_B signal to propagate to the clock  gating logic.)  \xe2\x80\x93 MPLLVDD must be driven to 0, not floating, before  powering up  A suggested delay circuit is described in Figure 2.  \xe2\x80\xa2 Workaround 2\xe2\x80\x94Software:  Originally for the ARM clock to work at 400 MHz, the MPLL is  configured for 800-MHz operating frequency at the 2x Clock Port  (see Figure 3 and code that follows the figure), and the DIV2  divider is selected by software to achieve the 400-MHz operating  frequency at the ARM core. The default 266-MHz frequency is  achieved by using the DIV3 divider with an 800-MHz frequency at  the 2x Clock Port (so 400-MHz MPLL frequency).  The intent of this workaround is to reconfigure the 2x Clock Port  to 1.2 GHz (600-MHz MPLL frequency), and continue to use the  DIV3 divider in order to achieve the 400-MHz operating  frequency. This avoids switching to the DIV2 divider, which  introduced the problem. '
+p85
+sg10
+g11
+sg12
+S' No fix planned.'
+p86
+sg14
+g15
+sg16
+S'PLL '
+p87
+sg18
+g19
+sg20
+S'Boot problem  due to improper clock  duty cycle  Note: Systems that  use 266 MHz are  not affected by  this bug.'
+p88
+sg22
+S'Description:  There is a design errata in the i.MX27 PLL/DIV design, which  causes the ARM_CLK to have an incorrect duty cycle. The root  cause of this issue is due to an uninitialized node in the PLL, clock  gating, and divider circuitry, so the probability of this issue is  random. This error causes the ARM\xe2\x84\xa2 and DDR clocks duty cycle  to be 66% when they are running at 266 MHz and 75% when at  399 MHz, instead of 50%.  Projected Impact:  The result of the incorrect duty cycle of the clock is that the ARM  core might halt. This issue affects systems that enable 399 MHz  for the ARM core. '
+p89
+sg24
+g25
+sa(dp90
+g2
+g3
+sg4
+S'TLSbo94561'
+p91
+sg6
+g42
+sg8
+S'The SPCTL0 register needs to be re-programmed after each read access: either with a new value, or with the same value that was just read.'
+p92
+sg10
+g11
+sg12
+S'Fixed in silicon revision 2.1.'
+p93
+sg14
+g15
+sg16
+S'CCM'
+p94
+sg18
+g19
+sg20
+S'Read access to Clock Controller SPCTL0 register clears it'
+p95
+sg22
+S'Description: Any read access from the Clock Controller Module SPCTL0 register will clear the contents of the register. Projected Impact: For silicon revision 2.0 and prior, any read access performed from the Clock Controller Module SPCTL0 register will clear the contents of the register.'
+p96
+sg24
+g25
+sa(dp97
+g2
+g3
+sg4
+S'TLSbo95476'
+p98
+sg6
+g42
+sg8
+S'Connect LSCLK directly with LCD panel, if the LCD panel allows it.'
+p99
+sg10
+g11
+sg12
+S'No fix scheduled.'
+p100
+sg14
+g15
+sg16
+S'LCDC'
+p101
+sg18
+g19
+sg20
+S'LSCLK is missing'
+p102
+sg22
+S'Description: In 4 bpp, 8 bpp, 18 bpp, and TFT modes, LSCLK is missed in these conditions: \xe2\x80\xa2One clock cycle before every OE_ACD assert timing \xe2\x80\xa2Every VSYNC rising timing \xe2\x80\xa2Every VSYNC falling timing Projected Impact: If the user connects LSCLK directly with LCD panel and the LCD panel allows missing clock, then, there is no issue. However, if the user adds a serializer between LSCLK and LCD panel, then, the serializer may not work correctly because of missing clock and the LCD panel may have noise.'
+p103
+sg24
+g25
+sa(dp104
+g2
+g3
+sg4
+S'ENGcm12387'
+p105
+sg6
+g42
+sg8
+S' Make sure either of the following two conditions are satisfied  when MPLL is restarted:  \xe2\x80\xa2 ARMSRC == 1 and ARMDIV[1:0] == 00  or  \xe2\x80\xa2 ARMSRC == 0 and ARMDIV=[1:0] == 00 AND MPLL 2x '
+p106
+sg10
+g11
+sg12
+S''
+p107
+sg14
+g15
+sg16
+S'PLL '
+p108
+sg18
+g19
+sg20
+S'MPLL restart  limitation. Applies only  to silicon rev. 2.2.'
+p109
+sg22
+S'Description:  There is a limitation in the i.MX27 CCM module of the latest i.  MX27 silicon (rev 2.2). This limitation requires that the MPLL can  only be restarted under the following conditions:  \xe2\x80\xa2 CSCR register bit fields: ARMSRC == 1 and ARMDIV[1:0] ==  00 (meaningARM_CLK is divided by 2 from MPLL_CLK)  or  \xe2\x80\xa2 CSCR register bit fields ARMSRC == 0 and ARMDIV[1:0] ==  00 (meaning ARM_CLK is divided by 3) and MPLL 2x output is  greater than 537 MHz.  The ARMSRC and ARMDIV bits can be configured to any value  required by the application immediately after the MPLL restart. '
+p110
+sg24
+g25
+sa(dp111
+g2
+g3
+sg4
+S'ENGcm12388'
+p112
+sg6
+g42
+sg8
+S' 1) Reconfigure the MPLL prior to a warm reset to avoid  exceeding the 1.2-GHz maximum MPLL output frequency. This  workaround only works when warm resets can be anticipated.  2) In applications that cannot anticipate a warm reset, as in the  case of RESET_IN from somewhere else in the system or a  watchdog timeout, the MPLL should be operated at a sufficiently  lower frequency so as to prevent a warm reset causing the MPLL  to exceed 1.2 GHz.  3) The CLKMODE[1:0] pads may be used to bypass the FPM and '
+p113
+sg10
+g11
+sg12
+g107
+sg14
+g15
+sg16
+S'PLL '
+p114
+sg18
+g19
+sg20
+S'MPLL reference  clock source change  following a warm reset.'
+p115
+sg22
+S'Description:  A \xe2\x80\x9cwarm\xe2\x80\x9d reset is a reset initiated by a watchdog timeout,  RESET_IN, or by software forcing a reset via the watchdog  module. Such a reset will reconfigure all the CCM registers to  their default values but it will not restart the MPLL, so the full CCM  configuration defined by the registers does not take effect. In  particular, MCU_SEL is cleared, selecting the internal FPM  output. Changes to ARMSRC and ARMDIV also take immediate  effect. As a consequence, if the external high frequency reference  clock is slower than the internal FPM output, and the MPLL has  been configured to operate at 1.2 GHz, the MPLL will exceed the  specified limite of 1.2 GHz. For example: Given an external high  frequency clock of 24 MHz, a low frequency clock of 32 kHz, and  the MPLL configured for 1.2 GHz (MF=50) using the external  24-MHz clock as the reference, the following will occur: After a  warm reset, the MPLL will continue using MF=50, because the  CCM registers are reset to default values but the PLLs are not  restarted. As a result, the MPLL will lock to the FPM output  (32.768 MHz, selected by the default value of MCU_SEL in  CSCR), driving MPLL output frequency to 1.64 GHz, which is  beyond the specified maximum. '
+p116
+sg24
+g25
+sa.

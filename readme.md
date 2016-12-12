@@ -1,0 +1,5 @@
+The combined database in the form of csv files for errata specific to the cores ARM7, ARM9, Cortex-A8 and Cortex-A9 can be found in the Data folder. Each file has a header row indicating the columns present in the database. ARM7 and ARM9 can both be found in the ARM9.csv.
+
+Individual device/chip specific data can be found within Data/Chip_specific_raw_data. It is available in the form of pickle files where the errata are stored as a list of dictionaries. The Combine.py file can be used to combine multiple pickle files together to generate the combined CSV file. The Raw Errata Checklist.xlsx comprises the list of devices and details that were incorporated into this database. Most of the project code is in python2. However, initially for data processing, some members used python3. If a pickle file doesn’t open using python2, try python3. 
+
+The other folders indicate the experiments conducted for the purpose of the EECS 573 project “Mining hardware insights from errata documents” in Fall 2016 including Word2Vec, Recurrent Neural Networks, Topic modeling, co-occurrences using keywords and identifying frequent bigrams and trigrams.

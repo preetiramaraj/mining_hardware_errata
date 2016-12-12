@@ -1,0 +1,1041 @@
+(lp0
+(dp1
+S'Core'
+p2
+S'ARM9'
+p3
+sS'Errata ID'
+p4
+S' '
+p5
+sS'Criticality'
+p6
+g5
+sS'Workaround'
+p7
+S'1. Cellular RAM is basically Mobile SDRAM with the exception of a NOR flash interface. MX21 has an SDRAM controller. System designers are advised to use Mobile SDRAM for its higher performance(133 MHz) and lower cost. 2. Recommend not to enable burst write and treat Cellular RAM as NOR flash burst interface.'
+p8
+sS'Chip'
+p9
+S'MC9328MX21\rMC94MX21'
+p10
+sS'Fix Status'
+p11
+S'No fix solution is planned.'
+p12
+sS'Revisions Impacted'
+p13
+g5
+sS'Module'
+p14
+S'EIM'
+p15
+sS'Masks Affected'
+p16
+S'1L45X\r2L45X\r0M55B\r1M55B\rM55B'
+p17
+sS'Failure'
+p18
+S'EIM Cellular RAM support fails'
+p19
+sS'Details'
+p20
+S'Details:  For Infineon Cellular RAM HYE18P32160AC(-/L) 12.5, burst writes  can work with the following constraints:  1. EW bit does not work correctly\xe2\x80\x94When the EW bit is set, failures  are found when WSC= 7 and Cellular RAM is set up for LAT2. It does  work when WSC=9 and Cellular RAM is set for LAT3. This greatly  effects burst writes and reads. EW=0 always works (as NOR flash end  current burst).  2. After performing a sync access (like burst read), the Infineon  Cellular RAM expects another rising clock edge when CS goes high  to terminate burst\xe2\x80\x94If the Cellular RAM is left idle after a burst read  and NO rising clock edge is detected, it is stuck in sync mode not  allowing internal refresh cycles to occur\xe2\x80\x94this will cause Cellular RAM  to lose data. This appears to be more of an Infineon issue as Micron  asserts the extra rising edge clock is not needed. Also, Infineon stated  that in their next generation Cellular RAM this extra rising edge clock  is not required.  3. BCS bits do not shift the burst clock correctly\xe2\x80\x94Only BCS bit 0  (LSB) effects the shifting of burst clock, other bits do not effect burst  clock phase (though they still effect LBA assertion time).  4. Only async writes are possible to Cellular RAM BCR and RCR\xe2\x80\x94In  addition, when switching modes or re-programming the RCR/BCR,  the system must first be placed back into async mode.  5. When D cache is enabled and EIM is doing async writes to the Cellular RAM, the EIM will hold CS asserted (low) for >10us\xe2\x80\x94This causes a problem for Cellular RAM because it cannot perform an internal refresh operation. The work around is to set CSA to 1 to force CS assertion between writes to allow time for Cellular RAM to refresh or to place EIM and Cellular RAM in sync mode of operation (burst writes) whenever D cache is enabled.'
+p21
+sS'Manufacturer'
+p22
+S'NXP'
+p23
+sa(dp24
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S' Add a logic gate on board between the PC_POE signal and the  PCMCIA buffer such that the buffer is disabled at boot time. An  additional GPIO is required to control the gate ON/OFF. '
+p25
+sg9
+g10
+sg11
+S' No fix solution is planned'
+p26
+sg13
+g5
+sg14
+S' PCMCIA '
+p27
+sg16
+S'1L45X\r\n2L45X\r\n0M55B\r\n1M55B\r\nM55B'
+p28
+sg18
+S' Inverted PC_POE causes possible  system boot up failure when  PCMCIA buffer is used'
+p29
+sg20
+S'Details/Impact:  The PC_POE pin may cause system boot up failure when PCMCIA  interface buffer is connected directly. This is due to PC_POE pin  (muxed with NFCLE) driven low during initial boot (with/without NAND  Flash) which enables the external buffer and results in data bus  contention. This multiplexed signal can be re-programmed to perform  the PC_OE function after the system starts up, therefore, only boot  time is affected. '
+p30
+sg22
+g23
+sa(dp31
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S'CF/CF+ card support: No workaround available to support WinCE OS. For other OS, basic functionality can be fulfilled by allocating 1 Kbyte to attribute memory and 1 Kbyte to I/O memory or common memory.'
+p32
+sg9
+g10
+sg11
+S'CF/CF+ support problem is fixed in masks 0M55B, 1M55B, and M55B. PCMCIA Base registers 0\xe2\x80\x934 are enhanced to hold base addresses PBA[14:4] in the same programmable bits position. Memory windows such as common memory space, I/O space, True IDE or attribute memory space can be defined in an extended 32K space. Please refer to MC9328MX21 Mask Differences Between 2L45X and M55B Reference Manual Addendum for MC9328MX21RM, for further information on PCMCIA changes.'
+p33
+sg13
+g5
+sg14
+S'PCMCIA'
+p34
+sg16
+S'1L45X\r2L45X'
+p35
+sg18
+S'Cannot fully support CF/CF+ specification.'
+p36
+sg20
+S'Details: The PCMCIA controller only supports up to 2 Kbytes of total space to map the attribute memory, common memory, or I/O space. However, the CF/CF+ specification and operating systems such as WinCE/PPC, require them to locate at a separate space and beyond the 2 Kbyte range. Impact: CF/CF+ cannot be supported on WinCE/PPC. Possible difficulty in building drivers in other OS.'
+p37
+sg22
+g23
+sa(dp38
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S'No workaround is available.'
+p39
+sg9
+g10
+sg11
+S'No fix solution is planned.'
+p40
+sg13
+g5
+sg14
+S'PCMCIA'
+p41
+sg16
+S'1L45X\r2L45X\r0M55B\r1M55B\rM55B'
+p42
+sg18
+S'Not fully compliant with PCMCIA Ver. 2.1.'
+p43
+sg20
+S'Details: A total of 26 address lines are needed to fully support the PCMCIA standard. The i.MX21 processor does not support this many address lines. Impact: PCMCIA cards cannot be supported.'
+p44
+sg22
+g23
+sa(dp45
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S'No workaround is available.'
+p46
+sg9
+g10
+sg11
+S'No fix solution is planned.'
+p47
+sg13
+g5
+sg14
+S'SSI'
+p48
+sg16
+S'1L45X\r2L45X\r0M55B\r1M55B\rM55B'
+p49
+sg18
+S'AC97 Mode cannot be supported.'
+p50
+sg20
+S'Details/Impact: In AC97 variable mode, the AC97 controller is required to process the SLOTREQ automatically and source data from the transmit FIFO. However, the SLOTREQ bits are not handled and no variable mode operation is possible.'
+p51
+sg22
+g23
+sa(dp52
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S'System designer is advised to: 1. Wait for the TLS (Transmit Last Slot) interrupt before enabling the receiver, Or 2. Disable the transmitter, then enable both transmitter and receiver simultaneously.'
+p53
+sg9
+g10
+sg11
+S'This erratum is corrected in masks 0M55B, 1M55B, and M55B.'
+p54
+sg13
+g5
+sg14
+S'SSI'
+p55
+sg16
+S'1L45X\r2L45X'
+p56
+sg18
+S'SSI does not wait for frame sync to receive data when RE is enabled in sync mode.'
+p57
+sg20
+S'Details/Impact: When TE has been enabled and RE is enabled in the middle of a valid frame, the SSI starts to receive data immediately without synchronizing with the next frame sync event. This causes the receiver section to remain out-of-sync with the frame timing and results in incorrect data received.'
+p58
+sg22
+g23
+sa(dp59
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S'If more than one compare event is needed in freerun mode, use software comparisons instead.'
+p60
+sg9
+g10
+sg11
+S'This erratum is corrected in masks 0M55B and 1M55B.'
+p61
+sg13
+g5
+sg14
+S'GP Timer'
+p62
+sg16
+S'1L45X\r2L45X'
+p63
+sg18
+S'The GP timer counter is reset even in freerun mode whenever the compare register is written.'
+p64
+sg20
+S'Details/Impact: The counter is enhanced to reset automatically in restart mode. However, the change also influences freerun mode. The counter is now reset whenever the compare register is written. Applications are affected that allow compare values to change from time to time.'
+p65
+sg22
+g23
+sa(dp66
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S'No workaround is available.'
+p67
+sg9
+g10
+sg11
+S'No fix solution is planned.'
+p68
+sg13
+g5
+sg14
+S'EIM'
+p69
+sg16
+S'1L45X\r2L45X\r0M55B\r1M55B\rM55B'
+p70
+sg18
+S'RW assertion incorrectly influenced by RWN bit in EIM module when RWA = 0 and RWN \xe2\x89\xa5 1.'
+p71
+sg20
+S'Details: In EIM Chip select control register, there are two bits controlling the RW assertion and deassertion (negation) time: RWA and RWN. It is found that RWN incorrectly influences the assertion of the RW signal when RWA = 0 and RWN \xe2\x89\xa5 1. The RW signal assertion is delayed 1/2 HCLK later. The RW signals acts as though RWA is set to 1, even though RWA bit is cleared in software. Other settings work correctly. Impact: Minimal. A slight timing delay is introduced to RW signal assertion.'
+p72
+sg22
+g23
+sa(dp73
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S'No workaround is available.'
+p74
+sg9
+g10
+sg11
+S'Standby current has been improved on subsequent masks. Please refer to the MC9328MX21 data sheet for power figures.'
+p75
+sg13
+g5
+sg14
+S'Power'
+p76
+sg16
+S'1L45X'
+p77
+sg18
+S'Standby current at QVDD and NVDD is higher than the typical value specified in data sheet.'
+p78
+sg20
+S'Details/Impact: Standby current at QVDD and NVDD is higher than the typical value specified in data sheet.'
+p79
+sg22
+g23
+sa(dp80
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S'System designer is advised to define data transfer with a fixed burst length for reliable communication.'
+p81
+sg9
+g10
+sg11
+S'No fix solution is planned.'
+p82
+sg13
+g5
+sg14
+S'BMI'
+p83
+sg16
+S'1L45X\r2L45X\r0M55B\r1M55B\rM55B'
+p84
+sg18
+S'BMI Tx_Water_Mark bit = 0000 fails.'
+p85
+sg20
+S'Details/Impact: When setting BMI Tx_Water_Mark bit to 0000, TxF_EMPTY status bit will always be set. This makes detecting 16 empty slots in FIFO impossible and user will not be able to check if the last data has been transmitted. Therefore, variable burst transfer cannot be supported.'
+p86
+sg22
+g23
+sa(dp87
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S'It is advised to program Powerdown Timout bits of SDCTL0 and SDCTL1 to ZERO when using both CSD0 and CSD1. This issue does not happen when single CSD0 or CSD1 is used.'
+p88
+sg9
+g10
+sg11
+S'No fix solution is planned.'
+p89
+sg13
+g5
+sg14
+S'SDRAMC'
+p90
+sg16
+S'1L45X\r2L45X\r0M55B\r1M55B\rM55B'
+p91
+sg18
+S'SDRAM Power Down mode failing to support both CSD0 and CSD1 simultaneously.'
+p92
+sg20
+S'Details: Memory access may fail at the following condition: 1. Both CSD0 and CSD1 are used, and 2. Both Power-down time-out bits of SDCTL0 and SDCTL1 are programmed to non-zero. Impact: As SDRAM cannot be put to power down mode, a slightly higher operating power may result. This issue does not affect self refresh mode operation and no difference in sleep mode power will be seen.'
+p93
+sg22
+g23
+sa(dp94
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S'This can be accomplished through the use of an external AND gate, where the NFCE and NFRB signals of the i.MX21 are inputs to the AND gate and the output is connected to the CE_B input of the NAND Flash device.'
+p95
+sg9
+g10
+sg11
+S'No fix solution is planned.'
+p96
+sg13
+g5
+sg14
+S'NAND Flash Memory Controller'
+p97
+sg16
+S'1L45X\r2L45X\r0M55B\r1M55B\rM55B'
+p98
+sg18
+S'Cannot support NAND Flash memory requiring CE_B pin held low during tR (data transfer from cell to register) period.'
+p99
+sg20
+S'Details/Impact: NAND Flash controller drives the NF_CE signal high in tR period. For NAND Flash memory that requires CE_B to be held low during the tR period, memory access failure may result.'
+p100
+sg22
+g23
+sa(dp101
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S'No workaround is available for multiple block transfers. It requires card manufacturers to modify their firmwire to use single block transfers if not currently supported.'
+p102
+sg9
+g10
+sg11
+S'Multiple block transfers are supported in the following cases: \xe2\x80\xa2multi-block reads \xe2\x80\xa2operation in 1-bit mode \xe2\x80\xa2busy signal is supported \xe2\x80\xa24-bit mode, when fast DMACLK (HCLK) is not used, see below Multiple block transfer are not supported when all of the following conditions apply: \xe2\x80\xa2multi-block writes, and \xe2\x80\xa2there is no busy signal between blocks, and \xe2\x80\xa24-bit bus width, and \xe2\x80\xa2when DMACLK (HCLK) is faster than MMCCLK/0.216. For example, 20 MHz SDIO, cannot use DMACLK (HCLK) faster than 92.6 MHz, thus HCLK cannot be 133 MHz during SDIO 4-bit multi-block reads.'
+p103
+sg13
+g5
+sg14
+S'SDIO Controller'
+p104
+sg16
+S'1L45X\r2L45X\r0M55B\r1M55B\rM55B'
+p105
+sg18
+S'Multiple block transfer support fails if no BUSY signal is detected.'
+p106
+sg20
+S'Details/Impact: After sending the first block of data, the SDIO controller operation will stop if there is no BUSY signal detected. Therefore, multiple block transfers without any BUSY signal responding from card cannot be supported.'
+p107
+sg22
+g23
+sa(dp108
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S'No Workaround is available'
+p109
+sg9
+g10
+sg11
+S'Fixed in 1M55B and M55B'
+p110
+sg13
+g5
+sg14
+S'NAND Flash Controller (NFC)'
+p111
+sg16
+S'0M55B'
+p112
+sg18
+S'NAND Flash warm reset delay'
+p113
+sg20
+S'Details: When the boot mode is set to NAND Flash boot-up, after the reset_in signal is asserted, the processor needs to wait about 10 seconds before continuing the boot-up process. Impact: During the NAND Flash boot-up process, there is a waiting loop that checks the transfer of boot code completion (bit 15 of NAND FLASH Operation and Configuration register 2, NAND_Flash_Config2). However, the bit will not set immediately because the NAND Flash controller will not transfer the whole code during reset_in assertion time. It is required to wait 10 seconds for the NAND Flash controller to reset when a soft reset (Reset_In or Watchdog reset) occurs.'
+p114
+sg22
+g23
+sa(dp115
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S'Must use SDRAM devices with 1 kilobyte or greater page sizes.'
+p116
+sg9
+g10
+sg11
+S'No fix solution is planned.'
+p117
+sg13
+g5
+sg14
+S'SDRAMC'
+p118
+sg16
+S'1L45X\r2L45X\r0M55B\r1M55B\rM55B'
+p119
+sg18
+S'Cannot support SDRAMs with less than 1kilobyte page size.'
+p120
+sg20
+S'Impact: Not able to support single chip 4M x 16-bit (8Mbyte total size) SDRAM devices or devices with a page size of less than 1 kilobyte. A page size is defined as the number of bits in a row in the SDRAM device.'
+p121
+sg22
+g23
+sa(dp122
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S'For 64 Mbyte SDRAM devices the configuration of 16M x 32 or two 16M x 16-bit must be used to form a 32-bit data bus, where either configuration contains only 9 column addresses.'
+p123
+sg9
+g10
+sg11
+S'No fix solution is planned.'
+p124
+sg13
+g5
+sg14
+S'SDRAMC'
+p125
+sg16
+S'1L45X\r2L45X\r0M55B\r1M55B\rM55B'
+p126
+sg18
+S'Cannot support SDRAMs with column address sizes of 10.'
+p127
+sg20
+S'Impact: Not able to support single chip 32M x 16-bit (64Mbyte total size) SDRAM devices or devices with a column address size of 10.'
+p128
+sg22
+g23
+sa(dp129
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S'In general, when reading from Nand Flash, SW must turn off the code correction in HW (ECC) and perform the correction in SW (done by performing error check and correction at the end of each page). When booting from Nand Flash, the Nand Flash Controller (NFC) copies the first 2Kbytes to internal RAM and jumps to the beginning of the code. This is done with no option for SW intervention/modification, so the aforementioned general guideline could not be applied. Note: If the NAND flash requires Error Correction on the initial block, then the following procedure is required. Otherwise, apply the S/W ECC after boot up: Due to the nature of this bug, any single-bit error (if found) in the first 512 bytes (first page) is corrected properly, therefore, "special\xe2\x80\x9d boot loader code must be placed in those first 512 bytes. The loader code, once executed, must then perform the following: 1. Turn off error correction in HW. 2. Re-load pages 2, 3, and 4 (which comprise the remaining 1.5 Kbytes of code). 3. For every page read, perform error correction in SW. 4. Continue normal execution.'
+p130
+sg9
+g10
+sg11
+S'No fix solution is planned.'
+p131
+sg13
+g5
+sg14
+S'NFC / System Boot'
+p132
+sg16
+S'1L45X\r2L45X\r0M55B\r1M55B\rM55B'
+p133
+sg18
+S'NFC (Nand Flash Controller) fails to correct two single-bit errors if they occur on consecutive pages, on data read accesses.'
+p134
+sg20
+S'Details: In cases when there are single-bit errors in two consecutive page reads, then the error in the second page is not corrected by the NFC. Impact: NFC error correction logic is faulty on read accesses and errors in consecutive pages are not fixed. Thus, software must correct the errors in place of the hardware. Special care must be given when booting from a Nand Flash for both 512 bytes, and 2 Kbytes page boot options\xe2\x80\x94see details under Workaround.'
+p135
+sg22
+g23
+sa(dp136
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S'Do not access the DISR register to clear DMA transfer interrupts. Instead clear the interrupt of each DMA being used by setting the SMOD bits of the DMA CCR register for the DMA channel being used. Software Example: // pointer to 32bit program register DMA_CCR0 volatile unsigned int * P_32_DMA_CCR0 ; int  tmp ; // save the old value of CCR tmp = *(P_32_DMA_CCR0+(0x40*channelID)) ; //Force DMA channel\'s source mode as reserved "11" to clear the DISR bit for the selected channel * (P_32_DMA_CCR0+(0x40*channelID)) = tmp | (0x3<<10); // restore the old value back into CCR'
+p137
+sg9
+g10
+sg11
+S''
+p138
+sg13
+g5
+sg14
+S'DMA'
+p139
+sg16
+S'1L45X\r2L45X\r0M55B\r1M55B\rM55B'
+p140
+sg18
+S'The DMA DISR register may be cleared accidentally when trying to clear any interrupt in the DISR register'
+p141
+sg20
+S'Details: When doing single or multiple DMA transfers the action of clearing a single DMA bit from the DISR register can result in clearing the whole DISR register. Impact: If the DISR register cleared accidentally, then an interrupt for DMA transfers does not take place. This can be an issue when there are multiple DMA channels transferring data at the same time. The Interrupt Service routine can miss interrupt notifications that DMA transfers have happened.'
+p142
+sg22
+g23
+sa(dp143
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S'Connect LSCLK directly with the LCD panel, if the LCD panel allows it.'
+p144
+sg9
+g10
+sg11
+S'No fix solution is planned.'
+p145
+sg13
+g5
+sg14
+S'LCDC'
+p146
+sg16
+g138
+sg18
+S'LSCLK is missing.'
+p147
+sg20
+S'Details: In 4 bpp, 8 bpp, 18 bpp, and TFT modes, LSCLK is missed in these conditions: \xe2\x80\xa2One clock cycle before every OE_ACD assert timing \xe2\x80\xa2Every VSYNC rising timing \xe2\x80\xa2Every VSYNC falling timing Impact: If the user connects LSCLK directly with LCD panel and the LCD panel allows missing clock, there is no issue. However, if the user adds a serializer between LSCLK and LCD panel, the serializer may not work correctly because of the missing clock and the LCD panel may have noise.'
+p148
+sg22
+g23
+sa(dp149
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S' Use the TIMER register to count 100 \xce\xbcs to determine the time  period during which the user is not allowed to access the  SyncFlash. '
+p150
+sg9
+S'MC9328MXS'
+p151
+sg11
+S' No metal-fix solution'
+p152
+sg13
+g5
+sg14
+S'SDRAMC '
+p153
+sg16
+S'2L45N'
+p154
+sg18
+S'It is necessary to use a  separate timer to prevent access  to the SyncFlash immediately after  the SyncFlash is re-enabled from  deep low-power mode'
+p155
+sg20
+S'Impact:  If SyncFlash channel is disabled, the SDRAMC puts the  syncflash into a mode called deep low-power mode. When  the SyncFlash is re-enabled, it requires a 100 \xce\xbcs period to  initialize before allowing any access to it.  The current design does not have a built-in timer to prevent  access before 100 \xce\xbcs has passed. Therefore, an access  occurring during this time period could return invalid data  from the SyncFlash. '
+p156
+sg22
+g23
+sa(dp157
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S' Use a dummy DMA transfer to and from a dummy memory  space to force the MEMC to release the bus for other bus  masters. For more detailed information and code example,  please visit our website www.freescale.com/imx. '
+p158
+sg9
+g151
+sg11
+S' No metal-fix solution'
+p159
+sg13
+g5
+sg14
+S'LCDC '
+p160
+sg16
+S'2L45N'
+p161
+sg18
+S'The Memory Controller  arbiter (MEMC) does not break  and release the ARM\xe2\x84\xa2 core\xe2\x80\x99s  back-to-back burst access to the  other (for example, LCDC, DMA,  and MMA) bus masters. In this  situation, the ARM core\xe2\x80\x99s back-toback access does not use an IDLE  cycle as a separator.'
+p162
+sg20
+S'Impact:  Typically, the back-to-back burst access that does not use  the IDLE cycle as a separator occurs for operations such as  cache fill, miss, and burst operations by the ARM processor.  In cases such as this, the MEMC arbiter incorrectly treats the  back-to-back sequence as a single instruction process that  causes the other bus masters to wait longer to access the  bus. On the AHB bus, only the LCDC and MMA modules are  affected. Because the MMA is not a periodic and time critical  module with regards to requesting the grant of the bus, the  impact of this issue is minimal, although the LCDC frame  buffer refresh can be greatly impacted. '
+p163
+sg22
+g23
+sa(dp164
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S' Two methods are used to prevent this limitation depending on  the data packet size:  1. For data packet sizes of less than 5 bytes:  After the short packet data transfer, software must poll the  USBD BYTE_COUNT==0 before initiating the next DMA  transfer. This ensures that FIFO can accept the next long  data packet of 64-bytes.  2. For data packet sizes of 5 bytes and greater:  Use a 32-byte FIFO instead of a 64-byte FIFO to ensure that  the DMA request is cleared. The granularity bits GR[2:0] must  be set to 111. '
+p165
+sg9
+g151
+sg11
+S' No metal-fix solution'
+p166
+sg13
+g5
+sg14
+S'USB Device Port '
+p167
+sg16
+S'2L45N'
+p168
+sg18
+S'Limitation on using DMA  for USBD IN data transfer.  There is a limitation on using DMA  to transfer continuous data from  memory to a 64-byte USBD FIFO  (FIFO1 and FIFO2) when using a  short packet (<37 bytes) followed  by a long packet (> 32 bytes).  For example: A 6 byte packet  followed by a 64 byte packet, or a  32 byte packet followed by a 40  byte packet such that the short  packet length + the long packet  length is greater than 64 bytes  (FIFO depth).'
+p169
+sg20
+S'Impact:  The DMA request does not clear after the reception of a short  packet, causing a long packet to start filling in the FIFO  before the data in the short packet is moved out of the FIFO.  This causes the USBD FIFO to overflow and generate an  error that prevents a DMA interrupt DMA_ISR from being  generated.  This occurs because the ALARM bit (DMA request) being  cleared is based on the setting of the 4*GR[2:0] granularity  bits in USB_EPn_FCTRL register. The ALARM bit for IN  transfer is set when the amount of data bytes that remain in  the FIFO is below the alarm value (ALARM[5:0] in the  USB_Epn_FALARM register and cleared when there is less  than 4*GR[2:0] of free bytes that remain in the FIFO.  The Granularity bits GR[2:0] are fixed at 3 bits regardless of  the FIFO depth. For IN transfer, DMA requests are cleared  when FREE data bytes are 4*GR[3:0]. Because GR[2:0]=3 *  111 as a maximum value, there can only be 28 free bytes.  Therefore, a 6 byte short packet in the 64-byte FIFO will not  dessert the DMA request. '
+p170
+sg22
+g23
+sa(dp171
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S'Either set the seconds alarm register to an even value or, if set to an odd value, when the interrupt occurs, check the current time against the alarm time. If it does not match, then clear the interrupt and return. The actual interrupt will occur one second later.'
+p172
+sg9
+g151
+sg11
+S'No metal-fix solution.'
+p173
+sg13
+g5
+sg14
+S'RTC'
+p174
+sg16
+S'2L45N'
+p175
+sg18
+S'An alarm set to an odd number of seconds results in a false interrupt one second before the actual alarm time, followed by the actual interrupt.'
+p176
+sg20
+S'Impact: This double interrupt is the result of a glitch produced by the seconds counter bits 1 and 0. Bit 0 of the seconds counter has greater loading than bit position 1. Upon receiving a clock signal to update the seconds counter, the seconds counter bit 0 changes state to be slower than counter bit 1. This glitch causes the alarm to see a momentary match, triggering the interrupt one second early. When the seconds counter actually does match the alarm value, another interrupt is triggered (if it has not been disabled following the previous interrupt) at the correct time. For example: If you set the alarm to \xe2\x80\x9cxx : xx : xx : 15 sec\xe2\x80\x9d, when the second counter changes from 13(1101) to14(1110), the bit position 1 changes faster than bit position 0. The result is 13(1101) to 15(1111) to 14(1110). This 15(1111), the glitch, matches the alarm setting and triggers the interrupt.'
+p177
+sg22
+g23
+sa(dp178
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S' Attach a 1 K\xce\xa9 series resistor to each tied-low input pin. '
+p179
+sg9
+g151
+sg11
+S' No metal-fix solution'
+p180
+sg13
+g5
+sg14
+S'IOPAD '
+p181
+sg16
+S'2L45N'
+p182
+sg18
+S'Power-up leakage during  the recommended power-up  sequence, NVDD>AVDD>QVDD.  In the normal configuration, the  maximum current leakage  occurring during the power-up  period can be up to 600mA'
+p183
+sg20
+S'Impact:  Using the workaround, the power-up current can be  minimized to less than maximum specified operating current. '
+p184
+sg22
+g23
+sa(dp185
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S'For a bus that is heavily loaded and that requires SDRAM access, a dynamic burst length is recommended: \xe2\x80\xa2fixed burst length = 0 \xe2\x80\xa2high mark = 3 \xe2\x80\xa2low mark = 8 For a very heavily loaded system, increasing the low mark value increases the chance of a bus grant of the system bus, at the expense of more frequent bus requests.'
+p186
+sg9
+g151
+sg11
+S'No metal-fix solution.'
+p187
+sg13
+g5
+sg14
+S'MEMC/AHBC'
+p188
+sg16
+S'2L45N'
+p189
+sg18
+S'The LCD flicker issue is not completely resolved by the use of dummy DMA transfer (See Erratum number 7). The LCDC DMA high/low setting does not ensure that the next bus request is triggered in the event the current DMA burst is not completed. The problem occurs when the next bus request is initiated while the LCDC is waiting for the last data in the current DMA burst. This is because when the LCDC is waiting for the last data, it only expects an HREADY signal to be asserted. So, if the next bus request is triggered while the LCDC is waiting, the bus request will be missed. A data fetch can not be initiated while data in FIFO is being continuously drained so an under-run will eventually occur. In Summary: If the next bus request is issued when the LCDC is waiting for the last data in the current DMA burst it will not be recognized.'
+p190
+sg20
+S'Impact: The low mark must never be set higher than 10 and the high mark must be set at 3.'
+p191
+sg22
+g23
+sa(dp192
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S'DTACK mode (DTACK_SEL = 0): No workaround. WAIT mode (DTACK_SEL=1): In Wait mode the OE signal for read cycle is negated up to 1 system clock before a data latch occurs at the end of bus cycle, possibly causing incorrect data to be latched by the i.MXS because the external device releases the data bus after OE negates. The workaround is to use external logic (one D-flip flop and one OR-gate) to extend OE negation time until the CS cycle is completed (after or at CS5 rising edge). D-FF connection must be D=1, RST= /OE OR /CS5, CLK= CS5, Q=NewOE for DTACK device only. To avoid disrupting other devices using /OE, the NewOE signal only replaces the /OE signal going to a DTACK device. See Figure 1. /OE /CS5 rst1 /NewOE for device DQ using DTACK only /CS5 set 1. If using LCX logic from ON Semiconductor, expect propagation delays from /OE and /CS assertion to /newOE of 3.0 to 12.5 ns. Freescale Semiconductor cannot recommend one supplier over another and in no way suggests that ON Semiconductor is the only supplier of logic devices. Figure 1. D-FF Connection Workaround'
+p193
+sg9
+g151
+sg11
+S'No metal-fix solution.'
+p194
+sg13
+g5
+sg14
+S'EIM'
+p195
+sg16
+S'2L45N'
+p196
+sg18
+S'CS5 fails read operation when using the DTACK function.'
+p197
+sg20
+S'Impact: When CS5 is configured to an external input DTACK signal to terminate the bus cycle (for example WSC = 0x3F), using either DTACK mode (DTACK_SEL = 0) or WAIT mode (DTACK_SEL= 1), the CPU or DMA read cycles in CS5 memory space may terminate incorrectly. CS5 can function normally by using wait state control bus termination\xe2\x80\x94that is, WSC is not set to 0x3F. All write cycles will function correctly.'
+p198
+sg22
+g23
+sa(dp199
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S' PA17 is restricted for the DTACK functionality only. Thus, in  any other situation when DTACK is not used, this pin must be  pulled up or tied high (may be done by simply setting the  corresponding PUEN bit, configuring it as an input, and  leaving the pin unconnected). If the DTACK functionality is  used, the pin will only toggle during CS5 accesses and  should not toggle during any non-CS5 access. '
+p200
+sg9
+g151
+sg11
+S' No metal-fix solution'
+p201
+sg13
+g5
+sg14
+S'EIM '
+p202
+sg16
+S'2L45N'
+p203
+sg18
+S'Port A pin 17 (multiplexed  with DTACK) inadvertently affects  other chip-select functions when  DTACK is not used.'
+p204
+sg20
+S'Impact:  When the DTACK signal is not used, toggling the GPIO pin  PA17 will adversely affect the other EIM chip-select functions. '
+p205
+sg22
+g23
+sa(dp206
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S'Must use SDRAM devices with 1 kilobyte or greater page sizes.'
+p207
+sg9
+g151
+sg11
+S'No metal fix is planned.'
+p208
+sg13
+g5
+sg14
+S'SDRAMC'
+p209
+sg16
+S'2L45N'
+p210
+sg18
+S'Cannot support SDRAMs with less than 1kilobyte page size.'
+p211
+sg20
+S'Impact: Not able to support single chip 4M x 16-bit (8 Mbyte total size) SDRAM devices or devices with a page size of less than 1 kilobyte. A page size is defined as the number of bits in a row in the SDRAM device.'
+p212
+sg22
+g23
+sa(dp213
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S'For 64 Mbyte SDRAM devices the configuration of 16 M x 32 or two 16M x 16-bit must be used to form a 32-bit data bus, where either configuration contains only 9 column addresses.'
+p214
+sg9
+g151
+sg11
+S'No metal fix is planned.'
+p215
+sg13
+g5
+sg14
+S'SDRAMC'
+p216
+sg16
+S'2L45N'
+p217
+sg18
+S'Cannot support SDRAMs with column address sizes of 10.'
+p218
+sg20
+S'Impact: Not able to support single chip 32M x 16-bit (64 Mbyte total size) SDRAM devices or devices with a column address size of 10.'
+p219
+sg22
+g23
+sa(dp220
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S' No workaround is available. Recommend system designer to  use 32-bit SDRAM if 8 Mbyte or 64 Mbyte memory  configuration is desired. '
+p221
+sg9
+g151
+sg11
+S' No metal fix is planned'
+p222
+sg13
+g5
+sg14
+S'SDRAMC '
+p223
+sg16
+S'2L45N'
+p224
+sg18
+S'In 16-bit mode, only  SDRAM device with 9 Cols are  supported'
+p225
+sg20
+S'Impact:  In 16-bit mode, burst access is not guaranteed for SDRAM  with number of columns not equal to 9. Known impact is  failure to support following devices in 16-bit mode:  a. SDRAM with 12 Rows and 8 Cols  (4Mx16-bit, 8MB total size)  b. SDRAM with 13 Rows and 10 Cols  (32Mx16-bit, 64 Mbyte total size) '
+p226
+sg22
+g23
+sa(dp227
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S' The ARM Realview 3.0 SP1 Build 617 compiler and linker  have a patch that addresses this issue. With this patch  applied, the compiler will not generate this LDM instruction.  The Build 617 patch is available to download from the ARM  website.  To use the patch, users must insert  \xe2\x80\x9c--branchpatch 920t-ldm2\xe2\x80\x9d  to the compiler and linker command lines.  For code compiled by a compiler other than the above stated  tool, a manual search and replace for the LDM instruction of  two values in assembly code can be done with multiple  options for equivalent code replacements.  Example 1:  LDMIA r0, {r1, r2}  is functionally IDENTICAL to:  LDR r1, [r0]  LDR r2, [r0, #4]  Example 2:  If updating the base register to a new value, such as:  LDMIA r0!, {r1, r2}  then this is functionally IDENTICAL to:  LDR r1, [r0], #4  LDR r2, [r0], #4 '
+p228
+sg9
+g151
+sg11
+S' No hardware fix planned'
+p229
+sg13
+g5
+sg14
+S'ARM920T AHB  Wrapper '
+p230
+sg16
+S'2L45N'
+p231
+sg18
+S'LDM instruction fails to  load non-cached data from  memory'
+p232
+sg20
+S'Impact:  When a load multiple (LDM) instruction is used to load two  specific registers from an un-cached region of memory, and  the load instruction begins immediately after a delayed  buffered write, then the LDM will not load the second register  correctly. '
+p233
+sg22
+g23
+sa(dp234
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S' The following software solutions are recommended to be  used in Interrupt Service Routines (ISRs) to avoid the parity  bug. Polling can also be used instead of interrupts.  1. A maximum of 32 bytes can be written into the TxFIFO  when transmission is complete (USR2.TXDC = 1).  2. A maximum of 31 bytes can be written into the TxFIFO  when the TxFIFO is empty (USR2.TXFE = 1).  3. A maximum of 32 - n bytes, where n = UFCR.TXTL, can  be written into the TxFIFO when the data level in the TxFIFO  falls below the selected threshold (when USR1.TRDY = 1). '
+p235
+sg9
+g151
+sg11
+S' No hardware fix planned.'
+p236
+sg13
+g5
+sg14
+S' UART '
+p237
+sg16
+S'2L45N'
+p238
+sg18
+S' Parity bug in UART transmitter'
+p239
+sg20
+S'Impact:  A parity error in UART character transmissions may occur.  TxFIFO data being shifted out is not alterable after the start  bit is issued. However, the parity bit can change after the  start bit is issued and is not fixed until data Bit0 is issued. If  the TxFIFO is overwritten by the CPU during the interval from  the end of the start bit to the end of the data Bit0, there will be  a mismatch between the data shifted out and the parity bit. In  this case, a parity error may occur. '
+p240
+sg22
+g23
+sa(dp241
+g2
+g3
+sg4
+g5
+sg6
+g5
+sg7
+S'To ensure a gap of at least 2 bit-clock cycles between SSI_EN and TX/RX bit setting (only for External word-wide frame-sync patterns), here is an example code for this workaround. void ssi_transmit_receive_test() { //parameters defined here Statement1 (); //clock configuration here Statement2(); //AUDMUX configuration here Statement3(); //SSI configuration here Statement4(); //Enable SSI by programming SSI_SCR MEMWD(SSI2_SCR,scr_mask1); //delay some time for the SSI state machine to function //properly for(i=0;i<=5;i++); //Enable transmit and receive of SSI by programming //SSI_SCR MEMWD(SSI2_SCR,scr_mask2); ...... }'
+p242
+sg9
+g151
+sg11
+S'No metal-fix solution planned.'
+p243
+sg13
+g5
+sg14
+S'SSI'
+p244
+sg16
+S'2L45N'
+p245
+sg18
+S'In word-wide frame-sync mode, if SSI_EN and TX/RX_EN are set near new frame start, SSI Receive and Transmit does not function properly and there is a chance of words getting missed/shifted or transmit data line being driven low for 1/2 clock cycles during the first frame.'
+p246
+sg20
+S'Impact: Receive malfunction: Rx data is usually taken with the period of FS=H. However, in some special use cases, it is changed to period of FS=L. Once this occurs, this period never returns to the period of FS=H. The issue occurs in the following conditions: Normal mode Sync mode Slave mode Some additional conditions of this scenario are: TX and RX are used at the same time (full duplex) SYN=1,RXDIR=0,TXDIR=0,TFDIR=0 External clock is 2.048MHz Frame frequency is 8kHz Frame pulse width is 1 word (8 clock) SSI_EN and RE is set to 1 within latter 4 clocks of FS=H period (8 clocks) Transmit malfunction: TxData is changed to different value at only the first time of transmitting when TE bit is set just before FS signal or within FS timing.'
+p247
+sg22
+g23
+sa.
